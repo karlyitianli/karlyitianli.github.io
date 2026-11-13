@@ -63,7 +63,7 @@
   h2:first-child { margin-top: 0; }
   .note { color: var(--muted); margin-bottom: 16px; max-width: 640px; }
   .note code, td code, li code { font-family: "DM Mono", monospace; font-size: 12px; background: var(--tan); border: 1px solid var(--border); border-radius: 6px; padding: 1px 5px; }
-  table { width: 100%; border-collapse: collapse; background: var(--tan); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin-bottom: 24px; }
+  table { width: 100%; border-collapse: collapse; background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin-bottom: 24px; }
   th, td { text-align: left; padding: 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
   tr:last-child th, tr:last-child td { border-bottom: 0; }
   th { font-family: "DM Mono", monospace; font-size: 12px; line-height: 16px; letter-spacing: 0.6px; text-transform: uppercase; color: var(--muted); font-weight: 400; }
@@ -155,7 +155,8 @@
       <tr><td>Images</td><td>Public Framer image URLs, <code>framerusercontent.com/images/</code>, referenced directly in <code>&lt;img&gt;</code> tags, not committed to the repo. Portrait, case study logos, and preview images all use width and height attributes and <code>loading="lazy"</code> on the large previews. Preview images keep a 2160 by 1350 aspect ratio. The background grid is a 21 by 21px SVG from Framer, tiled with CSS.</td></tr>
       <tr><td>Favicon</td><td><code>favicon.ico</code> at the repository root, linked from every page with <code>&lt;link rel="icon" href="/favicon.ico" type="image/x-icon"&gt;</code>. Built from the portrait photo, square cropped, circular mask (border radius 999px), with 16, 32, 48, 64, 128, and 256px sizes inside one ICO file.</td></tr>
       <tr><td>Hosting</td><td>GitHub Pages, free static hosting. Repository <code>karlyitianli.github.io</code>, branch <code>main</code>, no custom domain, live at <code>https://karlyitianli.github.io/</code>, this page at <code>/design-system/</code>. Deploys automatically on every push to <code>main</code>, usually live in about a minute, with a <code>Cache-Control: max-age=600</code> header, so hard refresh or a <code>?v=N</code> query to see a fresh copy. HTTPS by default. No Vercel, no Cloudflare, no server, no database, no analytics.</td></tr>
-      <tr><td>Source and editing</td><td>Source of truth for the design is Framer, project <code>karls.design</code>, inspected through Framer MCP. Pages are edited as local HTML files and pushed with the GitHub MCP <code>create_or_update_file</code> tool. The favicon is the one exception, it is a binary file, so it is uploaded through the GitHub website instead.</td></tr>
+      <tr><td>Editor / agent</td><td>Muse AI is the editor and agent of choice for this site. Pages are built, edited, and pushed through Muse, Meta's personal AI agent, working over WhatsApp: it inspects Framer through Framer MCP, writes the HTML, CSS, and JavaScript, and pushes to GitHub with the GitHub MCP <code>create_or_update_file</code> tool.</td></tr>
+      <tr><td>Source and editing</td><td>Source of truth for the design is Framer, project <code>karls.design</code>, inspected through Framer MCP. Pages are edited as local HTML files in Muse and pushed to <code>main</code>. The favicon is the one exception, it is a binary file, so it is uploaded through the GitHub website instead.</td></tr>
     </table>
   </section>
 
