@@ -20,6 +20,10 @@ to `main`, GitHub Pages serves it.
   the right (Role: Senior Product Designer, Team: Eng, Data, Ops, Timeline:
   3 weeks, Skills: Product strategy, Systems thinking). Stacks to one
   column on Phone and Small Phone, where the right details panel is hidden.
+- `/wats/`, `/greenhouse/`, `/attentive/`, `/quil/` — Empty placeholder
+  pages for the other case studies, company name plus "Coming soon." and a
+  Back link, in the same site style. They will be filled in following the
+  `/level/` example.
 - `/design-system/` — Design system reference for this site: colour tokens,
   typography, components, and layout breakpoints, with live samples.
   Tappable tabs (Overview, Colours, Typography, Components, Layout) with
