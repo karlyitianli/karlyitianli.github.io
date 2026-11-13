@@ -93,18 +93,81 @@ to `main`, GitHub Pages serves it.
 
 ## History
 
-- Nov 13, 2026: homepage copied from Framer and pushed, replacing the
-  earlier "Hello world" page. Fixes the same day: Inter single-storey "a"
-  (Framer Inter 4.000 files, `cv11`), 1px Border token on case study
-  cards, Phosphor icons, blinking clock colon, sidebar gap and contact
-  row dividers corrected to match Framer, cursor tooltip added.
-- Nov 13, 2026: `/design-system/` page added, with the full Stack section
-  (HTML, CSS, JS, fonts, icons, images, favicon, hosting, editing).
-  Tables and live sample cards use a white fill with the Border token
-  border, including the outer table border.
-- Nov 13, 2026: circular portrait `favicon.ico` added.
-- Nov 13, 2026: `/level/` case study page added, copied from the Framer
-  Level page (`/level`, node `QCxVJJyTA`).
+Everything below was done in one working session on Nov 13, 2026,
+rebuilding the site from Framer `karls.design` as static HTML on GitHub
+Pages. All commits are on `main` in `karlyitianli.github.io`, newest first.
+
+- `9426ccb` — Small Phone breakpoint: the About text collapses into one
+  flowing paragraph too, matching Framer's Small Phone frame.
+- `ddb158f` — Phone breakpoint (768–1023.98px): the About text collapses
+  into one flowing paragraph with no line breaks. Framer's Phone frame
+  already holds it as a single text node; the copy had split it into
+  three paragraphs.
+- `38d9425` — Pill hover states on `/level/` use `--border` instead of
+  `--tan`.
+- `5a55d30` — README notes the four empty case study placeholder pages.
+- `c11a367` — Empty placeholder pages for WATS, Greenhouse, Attentive,
+  and Quil (`/wats/`, `/greenhouse/`, `/attentive/`, `/quil/`), each the
+  company name, "Coming soon.", and a Back link, and their homepage cards
+  are now links to them.
+- `0eeeb96` — Page background changed to a new 15x15px `grid.svg` in the
+  repo root (stroke `#121212` at 0.07 opacity), tiled over Surface on
+  every page, replacing the 21x21px Framer Grid.svg.
+- `574a639` — Circular portrait `favicon.ico` uploaded (binary, 155 KB,
+  16–256px sizes inside one ICO file) through the GitHub website, after
+  Karl signed in and completed 2FA himself. Verified live 200.
+- `8b61af5` — README rewritten as a summary of the whole site as rebuilt
+  (pages, tokens, typography, interactive bits, stack, history),
+  replacing the stale "based in Philly / currently at Greenhouse" text.
+- `16fd72e` — `/level/` case study page added, copied from the Framer
+  Level page (`/level`, node `QCxVJJyTA`): "Receipt review", hero
+  level.png 2160x1350 radius 16, Problem, Solution, Outcomes, and
+  Reflection sections with exact copy and numbered lists, sticky left
+  nav 128px and right project details 256px, white panels with 1px
+  Border, radius 8, stacking on Phone and Small Phone.
+- `20db197` — Live sample cards on `/design-system/` changed from tan to
+  a white fill with the Border token border, matching the tables.
+- `653cba2` — Table outer border fixed: `border-collapse: separate` with
+  `border-spacing: 0`, so the 1px Border shows all around. The first push
+  timed out in the tool result but had actually landed.
+- `36c6d61` — Tables changed to a white fill with the Border token
+  border, and the Stack section now names Muse AI as the editor and
+  agent of choice.
+- `d210cf6` — Stack section on `/design-system/` expanded with the exact
+  HTML, CSS, JS, fonts, icons, images, favicon, hosting, and editing
+  details.
+- `7c1ead9`, `fbfc991` — `<link rel="icon" href="/favicon.ico">` added
+  to the homepage and the design system page.
+- `c9a69cf` — `/design-system/` page added, with tabs Overview, Colours,
+  Typography, Components, and Layout, keyboard arrow navigation, hash
+  routing, and live samples.
+- `59517b5` — Cursor tooltip added: a shared pill follows the mouse
+  (+16px offset, clamped to the viewport), native pointer cursor kept,
+  "Open tab" for Resume and LinkedIn, "Copy" switching to "Copied!" for
+  1 second on Email, rows dim to 0.5 opacity on hover, nothing special
+  on touch devices.
+- `acdf381` — Extra 24px removed from the sidebar: Framer's Sidebar gap
+  is 0, the 24px before the Download button comes from Contact
+  padding-bottom alone. All three contact rows now have the 1px
+  `rgba(18, 18, 18, 0.07)` bottom border with 4px 0 padding.
+- `7e8447a` — Typography root cause fixed: Framer serves full Inter 4.000
+  with all character variant features, Google Fonts' static Inter strips
+  them, so the site now loads Framer's Inter 4.000 latin files (weights
+  400/500/600). In Inter 4 the single-storey "a" is `cv11`, not `cv03`.
+- `23df0ea` — Case study cards got the 1px Border token, icons switched
+  from hand-drawn SVGs to Phosphor (`@phosphor-icons/web 2.1.1`, Framer's
+  icon set is literally named "Phosphor"), and the clock colon blinks via
+  a CSS 1s steps animation.
+- `d028006` — First attempt at the single-storey "a": `font-feature-settings`
+  `cv03/cv04/cv09/cv11/blwf` added. Later found insufficient, fixed properly
+  in `7e8447a`.
+- `4cbf3d1` — Homepage replaced with the exact Framer copy: sticky tan
+  sidebar, portrait, live Vancouver clock, Resume/LinkedIn/Email,
+  Download resume button, and the five case study cards (WATS,
+  Greenhouse, Level, Attentive, Quil), with images via public
+  Framer URLs.
+- `b6444e0` — GitHub connected as karlyitianli and a hello world page
+  pushed, live at https://karlyitianli.github.io/.
 
 ## Old content
 
