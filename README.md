@@ -30,7 +30,7 @@ to `main`, GitHub Pages serves it.
 - Surface `#fcfcfc`, Tan `#f9f3e6`, Beige `#f5f2eb`, Ink `#292929`,
   Muted `#7e7e7e`, Gold `#b58900`, Gold hover `#806000`,
   Border `rgba(18, 18, 18, 0.07)`, White `#ffffff`, Icon grey `#707070`.
-- Page background is a 21x21px grid SVG tiled over Surface.
+- Page background is a 15x15px grid SVG (`grid.svg`, stroke `#121212` at 0.07 opacity) tiled over Surface.
 - Breakpoints: Desktop 1440px+, Laptop 1280–1439px, Tablet 1024–1279px,
   Phone 768–1023px, Small Phone under 768px.
 
