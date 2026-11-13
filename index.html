@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 <style>
   :root {
     --surface: #fcfcfc;
@@ -69,7 +70,9 @@
     white-space: nowrap;
   }
   .local-time { display: flex; align-items: center; gap: 4px; }
-  .local-time svg { width: 16px; height: 16px; flex: 0 0 auto; }
+  .local-time .ph { font-size: 16px; color: var(--icon-grey); flex: 0 0 auto; }
+  .colon { animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
   .profile { display: flex; align-items: center; gap: 12px; }
   .portrait {
     width: 56px; height: 56px; flex: 0 0 auto;
@@ -92,7 +95,7 @@
     font: inherit; color: inherit; text-align: left; cursor: pointer;
   }
   .contact-row .label { display: flex; align-items: center; gap: 8px; }
-  .contact-row .label svg { width: 16px; height: 16px; flex: 0 0 auto; color: var(--icon-grey); }
+  .contact-row .label .ph { font-size: 16px; flex: 0 0 auto; color: var(--icon-grey); }
   .contact-row .value { color: var(--muted); text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .contact-row.email { border-bottom: 1px solid var(--border); padding-bottom: 8px; }
   .download {
@@ -105,10 +108,10 @@
     cursor: pointer;
   }
   .download:hover { background: var(--gold-hover); }
-  .download svg { width: 20px; height: 20px; flex: 0 0 auto; }
+  .download .ph { font-size: 20px; flex: 0 0 auto; }
   .right { flex: 1; min-width: 0; padding: 24px 24px 0 0; }
   .cards { display: flex; flex-direction: column; gap: 24px; padding-bottom: 40px; }
-  .card { background: var(--tan); border-radius: 16px; overflow: hidden; display: block; }
+  .card { background: var(--tan); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: block; }
   a.card:hover { text-decoration: none; }
   .card-head { display: flex; align-items: center; gap: 12px; padding: 12px; }
   .card-logo { width: 56px; height: 56px; flex: 0 0 auto; border-radius: 12px; object-fit: cover; display: block; background: #fff; }
@@ -146,7 +149,7 @@
         <div class="location-time">
           <span>🇨🇦 Vancouver, BC</span>
           <span class="local-time">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#707070" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <i class="ph ph-clock" aria-hidden="true"></i>
             <span id="clock">12:00 AM PDT</span>
           </span>
         </div>
@@ -165,22 +168,22 @@
         <div class="contact">
           <div class="contact-links">
             <a class="contact-row" href="https://docs.google.com/document/d/157TECODsRMnPA10_hurluWfFheK8Xdb2fbJapuPxo8o/edit?tab=t.0" target="_blank" rel="noopener">
-              <span class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg>Resume</span>
+              <span class="label"><i class="ph ph-file-text" aria-hidden="true"></i>Resume</span>
               <span class="value">August 2026</span>
             </a>
             <a class="contact-row" href="https://www.linkedin.com/in/karlyitianli/" target="_blank" rel="noopener">
-              <span class="label"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>LinkedIn</span>
+              <span class="label"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>LinkedIn</span>
               <span class="value">/karlyitianli</span>
             </a>
             <button class="contact-row email" type="button" id="copyEmail">
-              <span class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>Email</span>
+              <span class="label"><i class="ph ph-envelope" aria-hidden="true"></i>Email</span>
               <span class="value" id="emailValue">karl.yitian.li@gmail.com</span>
             </button>
           </div>
         </div>
       </div>
       <a class="download" href="https://docs.google.com/document/d/157TECODsRMnPA10_hurluWfFheK8Xdb2fbJapuPxo8o/edit?tab=t.0" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 21h16"/></svg>
+        <i class="ph ph-download-simple" aria-hidden="true"></i>
         Download resume
       </a>
     </aside>
@@ -255,7 +258,10 @@
         hour12: true,
         timeZoneName: "short"
       });
-      document.getElementById("clock").textContent = fmt.format(new Date());
+      var parts = {};
+      fmt.formatToParts(new Date()).forEach(function (p) { parts[p.type] = p.value; });
+      document.getElementById("clock").innerHTML =
+        parts.hour + '<span class="colon">:</span>' + parts.minute + " " + parts.dayPeriod + " " + parts.timeZoneName;
     } catch (e) {}
   }
   updateClock();
