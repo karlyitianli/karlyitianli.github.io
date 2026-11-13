@@ -3,78 +3,273 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hello world, Karl Li</title>
+<title>Karl Li — Product Designer</title>
+<meta name="description" content="Hi, I’m Karl, a designer based in Vancouver, BC. For the past decade, I've shipped 0-1 software across 6 startups and 6 industries.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root { color-scheme: light; }
+  :root {
+    --surface: #fcfcfc;
+    --tan: #f9f3e6;
+    --ink: #292929;
+    --muted: #7e7e7e;
+    --border: rgba(18, 18, 18, 0.07);
+    --gold: #b58900;
+    --gold-hover: #806000;
+    --white: #ffffff;
+    --icon-grey: #707070;
+  }
   * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
   body {
     margin: 0;
-    min-height: 100vh;
-    display: grid;
-    place-items: center;
-    padding: 24px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: #f6f1e7;
-    color: #1c1c1c;
-    transition: background 0.3s ease;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--surface);
+    background-image: url("https://framerusercontent.com/images/3YmMZJ2jA67k5mrQbmyxOM7vTs.svg");
+    background-size: 21px 21px;
+    background-repeat: repeat;
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.1px;
   }
-  main {
-    max-width: 560px;
-    width: 100%;
-    background: #fff;
-    border: 1px solid #e3ddd0;
+  a { color: inherit; text-decoration: none; }
+  a:hover { text-decoration: none; }
+  p { margin: 0; }
+  .page { max-width: 1440px; margin: 0 auto; display: flex; gap: 24px; align-items: flex-start; }
+  .left { padding: 24px 0 24px 24px; position: sticky; top: 0; flex: 0 0 auto; }
+  .sidebar {
+    width: 420px;
+    background: var(--tan);
+    border: 1px solid var(--border);
     border-radius: 16px;
-    padding: 32px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    padding: 24px;
+    position: sticky;
+    top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
   }
-  .eyebrow {
-    margin: 0 0 12px;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
+  .top { display: flex; flex-direction: column; gap: 24px; }
+  .location-time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-family: "DM Mono", ui-monospace, monospace;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.6px;
+    color: var(--muted);
     text-transform: uppercase;
-    color: #6b6257;
+    white-space: nowrap;
   }
-  h1 { margin: 0 0 12px; font-size: 40px; line-height: 1.1; }
-  p { margin: 0 0 16px; font-size: 17px; line-height: 1.6; }
-  button {
-    appearance: none;
-    border: 0;
-    border-radius: 999px;
-    padding: 12px 20px;
-    font-size: 16px;
-    font-weight: 700;
-    background: #1c1c1c;
-    color: #fff;
+  .local-time { display: flex; align-items: center; gap: 4px; }
+  .local-time svg { width: 16px; height: 16px; flex: 0 0 auto; }
+  .profile { display: flex; align-items: center; gap: 12px; }
+  .portrait {
+    width: 56px; height: 56px; flex: 0 0 auto;
+    border: 1px solid rgba(126, 126, 126, 0.2);
+    border-radius: 12px;
+    object-fit: cover;
+    display: block;
+  }
+  .identity { flex: 1; min-width: 0; }
+  .name { font-size: 24px; line-height: 32px; letter-spacing: -0.8px; font-weight: 400; }
+  .role { font-size: 14px; line-height: 20px; letter-spacing: -0.1px; color: var(--muted); }
+  .about p { margin: 0 0 20px; }
+  .about p:last-child { margin-bottom: 0; }
+  .contact { display: flex; flex-direction: column; gap: 8px; padding-bottom: 24px; }
+  .contact-links { display: flex; flex-direction: column; gap: 8px; }
+  .contact-row {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    min-height: 28px; width: 100%;
+    background: none; border: 0; padding: 0;
+    font: inherit; color: inherit; text-align: left; cursor: pointer;
+  }
+  .contact-row .label { display: flex; align-items: center; gap: 8px; }
+  .contact-row .label svg { width: 16px; height: 16px; flex: 0 0 auto; color: var(--icon-grey); }
+  .contact-row .value { color: var(--muted); text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .contact-row.email { border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+  .download {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    width: 100%; height: 39px; padding: 8px 12px;
+    background: var(--gold); color: var(--white);
+    border: 1px solid var(--border); border-radius: 8px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+    font-family: "Inter", sans-serif; font-size: 14px; font-weight: 600; line-height: 20px; letter-spacing: 0;
     cursor: pointer;
   }
-  button:focus-visible { outline: 3px solid #2f6fed; outline-offset: 3px; }
-  #count { margin: 16px 0 0; font-size: 15px; color: #555; }
-  .small { margin: 24px 0 0; font-size: 13px; color: #777; }
-  .small a { color: inherit; }
+  .download:hover { background: var(--gold-hover); }
+  .download svg { width: 20px; height: 20px; flex: 0 0 auto; }
+  .right { flex: 1; min-width: 0; padding: 24px 24px 0 0; }
+  .cards { display: flex; flex-direction: column; gap: 24px; padding-bottom: 40px; }
+  .card { background: var(--tan); border-radius: 16px; overflow: hidden; display: block; }
+  a.card:hover { text-decoration: none; }
+  .card-head { display: flex; align-items: center; gap: 12px; padding: 12px; }
+  .card-logo { width: 56px; height: 56px; flex: 0 0 auto; border-radius: 12px; object-fit: cover; display: block; background: #fff; }
+  .card-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+  .card-title { font-size: 16px; line-height: 24px; letter-spacing: 0; font-weight: 500; }
+  .card-sub { font-size: 14px; line-height: 20px; letter-spacing: -0.1px; color: var(--muted); }
+  .card-years { font-size: 14px; line-height: 20px; letter-spacing: 0; color: var(--muted); white-space: nowrap; }
+  .card-preview { padding: 0 12px 12px; }
+  .card-preview img { width: 100%; height: auto; aspect-ratio: 2160 / 1350; object-fit: cover; border-radius: 12px; display: block; }
+  @media (min-width: 1024px) and (max-width: 1279.98px) {
+    .sidebar { width: 400px; }
+    .right { padding: 24px; }
+  }
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .page { flex-direction: column; gap: 24px; }
+    .left { width: 100%; padding: 24px 24px 0 24px; position: static; }
+    .sidebar { width: 100%; position: static; }
+    .right { width: 100%; padding: 24px; }
+    .name { font-size: 20px; line-height: 32px; }
+  }
+  @media (max-width: 767.98px) {
+    .page { flex-direction: column; gap: 24px; }
+    .left { width: 100%; padding: 8px; position: static; }
+    .sidebar { width: 100%; position: static; }
+    .right { width: 100%; padding: 8px; }
+    .name { font-size: 16px; line-height: 24px; }
+  }
 </style>
 </head>
 <body>
-<main>
-  <p class="eyebrow">Hello world</p>
-  <h1>Hi, I am Karl Li.</h1>
-  <p>Product designer in Vancouver, BC. This page is live on GitHub Pages, built with Muse over WhatsApp.</p>
-  <button id="colorBtn" type="button">Change the colour</button>
-  <p id="count">You have tapped 0 times.</p>
-  <p class="small">Repo: <a href="https://github.com/karlyitianli/karlyitianli.github.io">karlyitianli/karlyitianli.github.io</a></p>
+<main class="page">
+  <div class="left">
+    <aside class="sidebar">
+      <div class="top">
+        <div class="location-time">
+          <span>🇨🇦 Vancouver, BC</span>
+          <span class="local-time">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#707070" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <span id="clock">12:00 AM PDT</span>
+          </span>
+        </div>
+        <div class="profile">
+          <img class="portrait" src="https://framerusercontent.com/images/sg6ZHyFZmNrGPsJJwphTF7EqpWA.png?width=765&amp;height=744" alt="Karl Li" width="56" height="56">
+          <div class="identity">
+            <p class="name">Karl Li</p>
+            <p class="role">Product designer</p>
+          </div>
+        </div>
+        <div class="about">
+          <p>Hi, I’m Karl, a designer based in Vancouver, BC.</p>
+          <p>For the past decade, I’ve shipped 0-1 software across 6 startups and 6 industries.</p>
+          <p>I turn complexity into simple and useful products that help people and planet flourish.</p>
+        </div>
+        <div class="contact">
+          <div class="contact-links">
+            <a class="contact-row" href="https://docs.google.com/document/d/157TECODsRMnPA10_hurluWfFheK8Xdb2fbJapuPxo8o/edit?tab=t.0" target="_blank" rel="noopener">
+              <span class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg>Resume</span>
+              <span class="value">August 2026</span>
+            </a>
+            <a class="contact-row" href="https://www.linkedin.com/in/karlyitianli/" target="_blank" rel="noopener">
+              <span class="label"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>LinkedIn</span>
+              <span class="value">/karlyitianli</span>
+            </a>
+            <button class="contact-row email" type="button" id="copyEmail">
+              <span class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>Email</span>
+              <span class="value" id="emailValue">karl.yitian.li@gmail.com</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <a class="download" href="https://docs.google.com/document/d/157TECODsRMnPA10_hurluWfFheK8Xdb2fbJapuPxo8o/edit?tab=t.0" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 21h16"/></svg>
+        Download resume
+      </a>
+    </aside>
+  </div>
+  <div class="right">
+    <section class="cards" aria-label="Case Studies">
+      <article class="card">
+        <div class="card-head">
+          <img class="card-logo" src="https://framerusercontent.com/images/mVSH0dEO32Z4BhAnCA8YlKimeQ.png?width=1024&amp;height=1024" alt="WATS logo" width="56" height="56">
+          <div class="card-info">
+            <p class="card-title">WATS</p>
+            <p class="card-sub">Turning waste into a metered utility</p>
+          </div>
+          <span class="card-years">2025 – 2026</span>
+        </div>
+        <div class="card-preview"><img src="https://framerusercontent.com/images/pmYfhtd3OFXm4hyJPA3SDKiEBj4.png?width=2160&amp;height=1350" alt="WATS metrics dashboard" width="2160" height="1350" loading="lazy"></div>
+      </article>
+      <article class="card">
+        <div class="card-head">
+          <img class="card-logo" src="https://framerusercontent.com/images/0coXZ0gI0ZAIMEVBeygLUJD00.png?width=400&amp;height=400" alt="Greenhouse logo" width="56" height="56">
+          <div class="card-info">
+            <p class="card-title">Greenhouse</p>
+            <p class="card-sub">Making hiring work for everyone</p>
+          </div>
+          <span class="card-years">2024 – 2025</span>
+        </div>
+        <div class="card-preview"><img src="https://framerusercontent.com/images/ukw50Jrd4u7WUAHZfe9IjyNQ.png?width=2160&amp;height=1350" alt="Greenhouse command palette" width="2160" height="1350" loading="lazy"></div>
+      </article>
+      <a class="card" href="./level">
+        <div class="card-head">
+          <img class="card-logo" src="https://framerusercontent.com/images/lIPgPoH09Kfsj7b6txqdiU9KoA.png?width=100&amp;height=100" alt="Level logo" width="56" height="56">
+          <div class="card-info">
+            <p class="card-title">Level</p>
+            <p class="card-sub">Employee benefits on 1 card</p>
+          </div>
+          <span class="card-years">2022 – 2023</span>
+        </div>
+        <div class="card-preview"><img src="https://framerusercontent.com/images/PEDZcuqWHCx1QMp5SOQjxYAA1uA.png?width=2160&amp;height=1350" alt="Level app" width="2160" height="1350" loading="lazy"></div>
+      </a>
+      <article class="card">
+        <div class="card-head">
+          <img class="card-logo" src="https://framerusercontent.com/images/ZEfl5vTtGqXq06VwEmK8O4E.png?width=100&amp;height=100" alt="Attentive logo" width="56" height="56">
+          <div class="card-info">
+            <p class="card-title">Attentive</p>
+            <p class="card-sub">SMS marketing for beloved brands</p>
+          </div>
+          <span class="card-years">2021 – 2022</span>
+        </div>
+        <div class="card-preview"><img src="https://framerusercontent.com/images/XqXv1NqHKZQd9meHlCqytrME8.png?width=2160&amp;height=1350" alt="Attentive dashboard" width="2160" height="1350" loading="lazy"></div>
+      </article>
+      <article class="card">
+        <div class="card-head">
+          <img class="card-logo" src="https://framerusercontent.com/images/qeC0wc5FnpHpXaG1Jjdgpxsgpk.png?width=100&amp;height=100" alt="Quil logo" width="56" height="56">
+          <div class="card-info">
+            <p class="card-title">Quil</p>
+            <p class="card-sub">Care navigation during COVID-19</p>
+          </div>
+          <span class="card-years">2020 – 2021</span>
+        </div>
+        <div class="card-preview"><img src="https://framerusercontent.com/images/UjWbhJi3TRVIfPkhekMff07YKk4.png?width=2160&amp;height=1350" alt="Quil journeys" width="2160" height="1350" loading="lazy"></div>
+      </article>
+    </section>
+  </div>
 </main>
 <script>
-  const colors = ["#f6f1e7", "#dcefe3", "#dbeafe", "#fde8d8", "#f3e8ff", "#fef3c7"];
-  const labels = ["warm paper", "mint", "sky", "peach", "lilac", "butter"];
-  let taps = 0;
-  let index = 0;
-  const button = document.getElementById("colorBtn");
-  const count = document.getElementById("count");
-  button.addEventListener("click", () => {
-    taps += 1;
-    index = (index + 1) % colors.length;
-    document.body.style.background = colors[index];
-    count.textContent = "You have tapped " + taps + (taps === 1 ? " time." : " times.") + " Background: " + labels[index] + ".";
+  function updateClock() {
+    try {
+      var fmt = new Intl.DateTimeFormat("en-US", {
+        timeZone: "America/Vancouver",
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true,
+        timeZoneName: "short"
+      });
+      document.getElementById("clock").textContent = fmt.format(new Date());
+    } catch (e) {}
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+  var copyBtn = document.getElementById("copyEmail");
+  var emailValue = document.getElementById("emailValue");
+  copyBtn.addEventListener("click", function () {
+    var email = "karl.yitian.li@gmail.com";
+    function done() {
+      emailValue.textContent = "Copied!";
+      setTimeout(function () { emailValue.textContent = email; }, 1000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email).then(done, done);
+    } else {
+      done();
+    }
   });
 </script>
 </body>
