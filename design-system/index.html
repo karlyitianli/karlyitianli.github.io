@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design System — Karl Li</title>
+<meta name="description" content="Design system for karlyitianli.github.io: colour tokens, typography, components, and layout breakpoints.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+<style>
+  @font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/GrgcKwrN6d3Uz8EwcLHZxwEfC4.woff2") format("woff2"); font-display: swap; font-style: normal; font-weight: 400; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+  @font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/UjlFhCnUjxhNfep4oYBPqnEssyo.woff2") format("woff2"); font-display: swap; font-style: normal; font-weight: 500; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+  @font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/yDtI2UI8XcEg1W2je9XPN3Noo.woff2") format("woff2"); font-display: swap; font-style: normal; font-weight: 600; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+  :root {
+    --surface: #fcfcfc;
+    --tan: #f9f3e6;
+    --beige: #f5f2eb;
+    --ink: #292929;
+    --muted: #7e7e7e;
+    --border: rgba(18, 18, 18, 0.07);
+    --gold: #b58900;
+    --gold-hover: #806000;
+    --white: #ffffff;
+    --icon-grey: #707070;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-feature-settings: "cv03" 1, "cv04" 1, "cv09" 1, "cv11" 1, "blwf" 1;
+    background-color: var(--surface);
+    background-image: url("https://framerusercontent.com/images/3YmMZJ2jA67k5mrQbmyxOM7vTs.svg");
+    background-size: 21px 21px;
+    background-repeat: repeat;
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.1px;
+  }
+  a { color: inherit; }
+  p { margin: 0; }
+  .page { max-width: 960px; margin: 0 auto; padding: 24px; }
+  header { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+  .crumb { font-family: "DM Mono", monospace; font-size: 12px; line-height: 16px; letter-spacing: 0.6px; color: var(--muted); text-transform: uppercase; }
+  .crumb a { text-decoration: none; }
+  .crumb a:hover { text-decoration: underline; }
+  h1 { font-size: 24px; line-height: 32px; letter-spacing: -0.8px; font-weight: 400; margin: 8px 0 8px; }
+  .lede { color: var(--muted); max-width: 640px; }
+  .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin: 24px 0; border-bottom: 1px solid var(--border); padding-bottom: 0; }
+  .tab {
+    appearance: none; background: none; border: 0; border-bottom: 2px solid transparent;
+    font: inherit; font-weight: 500; color: var(--muted); cursor: pointer;
+    padding: 8px 12px; margin-bottom: -1px;
+  }
+  .tab:hover { color: var(--ink); }
+  .tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--gold); }
+  .panel { display: none; padding: 8px 0 40px; }
+  .panel.active { display: block; }
+  h2 { font-size: 16px; line-height: 24px; font-weight: 500; margin: 24px 0 8px; }
+  h2:first-child { margin-top: 0; }
+  .note { color: var(--muted); margin-bottom: 16px; max-width: 640px; }
+  .note code, td code, li code { font-family: "DM Mono", monospace; font-size: 12px; background: var(--tan); border: 1px solid var(--border); border-radius: 6px; padding: 1px 5px; }
+  table { width: 100%; border-collapse: collapse; background: var(--tan); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin-bottom: 24px; }
+  th, td { text-align: left; padding: 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:last-child th, tr:last-child td { border-bottom: 0; }
+  th { font-family: "DM Mono", monospace; font-size: 12px; line-height: 16px; letter-spacing: 0.6px; text-transform: uppercase; color: var(--muted); font-weight: 400; }
+  .swatch { display: inline-block; width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border); vertical-align: middle; margin-right: 8px; }
+  .sample-card { background: var(--tan); border: 1px solid var(--border); border-radius: 16px; padding: 24px; margin-bottom: 24px; }
+  .sample-card .label { font-family: "DM Mono", monospace; font-size: 12px; line-height: 16px; letter-spacing: 0.6px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+  .type-name { font-size: 24px; line-height: 32px; letter-spacing: -0.8px; }
+  .type-body { font-size: 14px; line-height: 20px; letter-spacing: -0.1px; }
+  .type-title { font-size: 16px; line-height: 24px; font-weight: 500; }
+  .type-meta { font-size: 14px; line-height: 20px; color: var(--muted); }
+  .type-label { font-family: "DM Mono", monospace; font-size: 12px; line-height: 16px; letter-spacing: 0.24px; color: var(--gold); text-transform: uppercase; }
+  .type-label-spaced { font-family: "DM Mono", monospace; font-size: 12px; line-height: 16px; letter-spacing: 0.6px; color: var(--muted); text-transform: uppercase; }
+  .type-button { font-size: 14px; line-height: 20px; font-weight: 600; }
+  .demo-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; background: none; border: 0; border-bottom: 1px solid var(--border); padding: 4px 0; font: inherit; color: inherit; text-align: left; cursor: pointer; }
+  .demo-row:hover { opacity: 0.5; }
+  .demo-row .label { display: flex; align-items: center; gap: 8px; }
+  .demo-row .ph { font-size: 16px; color: var(--icon-grey); }
+  .demo-row .value { color: var(--muted); }
+  .download {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    width: 100%; height: 39px; padding: 8px 12px;
+    background: var(--gold); color: var(--white);
+    border: 1px solid var(--border); border-radius: 8px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+    font-size: 14px; font-weight: 600; line-height: 20px; cursor: pointer; text-decoration: none;
+  }
+  .download:hover { background: var(--gold-hover); }
+  .download .ph { font-size: 20px; }
+  .card { background: var(--tan); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: block; max-width: 560px; }
+  .card-head { display: flex; align-items: center; gap: 12px; padding: 12px; }
+  .card-logo { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; background: #fff; }
+  .card-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+  .card-title { font-size: 16px; line-height: 24px; font-weight: 500; }
+  .card-sub { font-size: 14px; line-height: 20px; color: var(--muted); }
+  .card-years { font-size: 14px; line-height: 20px; color: var(--muted); white-space: nowrap; }
+  .card-preview { padding: 0 12px 12px; }
+  .card-preview img { width: 100%; height: auto; aspect-ratio: 2160 / 1350; object-fit: cover; border-radius: 12px; display: block; }
+  .tip {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 12px 8px 8px; background: #7e7e7e; color: #fff;
+    border-radius: 99px; font-size: 14px; line-height: 20px;
+  }
+  .tip .ph { font-size: 20px; color: #fff; }
+  ul { margin: 0 0 16px; padding-left: 20px; }
+  li { margin-bottom: 4px; }
+  @media (max-width: 767.98px) {
+    .page { padding: 8px; }
+    h1 { font-size: 16px; line-height: 24px; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+  <header>
+    <div>
+      <p class="crumb"><a href="./">Karl Li</a> / Design System</p>
+      <h1>Design system</h1>
+      <p class="lede">Tokens and components for this personal website, copied from the Framer project karls.design. One page, no framework, live on GitHub Pages.</p>
+    </div>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="Design system sections">
+    <button class="tab" role="tab" id="tab-overview" aria-selected="true" aria-controls="panel-overview" data-tab="overview">Overview</button>
+    <button class="tab" role="tab" id="tab-colours" aria-selected="false" aria-controls="panel-colours" data-tab="colours" tabindex="-1">Colours</button>
+    <button class="tab" role="tab" id="tab-typography" aria-selected="false" aria-controls="panel-typography" data-tab="typography" tabindex="-1">Typography</button>
+    <button class="tab" role="tab" id="tab-components" aria-selected="false" aria-controls="panel-components" data-tab="components" tabindex="-1">Components</button>
+    <button class="tab" role="tab" id="tab-layout" aria-selected="false" aria-controls="panel-layout" data-tab="layout" tabindex="-1">Layout</button>
+  </div>
+
+  <section class="panel active" id="panel-overview" role="tabpanel" aria-labelledby="tab-overview" tabindex="0">
+    <h2>What this is</h2>
+    <p class="note">The source of truth is Framer, project karls.design, Home page. This page documents the tokens and components as built in HTML, CSS, and JavaScript on GitHub Pages, so the next page can reuse them without opening Framer.</p>
+    <h2>Principles</h2>
+    <ul>
+      <li>Exact copy first: same tokens, same spacing, same text styles as Framer.</li>
+      <li>One shared set of variables: colours and type live in <code>:root</code> and in the text style presets, not scattered through components.</li>
+      <li>Static and light: no build step, public Framer image URLs, Phosphor icons from a CDN.</li>
+      <li>Hover is information: contact rows dim to 0.5 opacity and show a cursor tooltip, cards are links where they lead somewhere.</li>
+    </ul>
+    <h2>Stack</h2>
+    <ul>
+      <li>Fonts: Inter 4.000 from Framer's own font files, DM Mono from Google Fonts.</li>
+      <li>Icons: Phosphor, <code>@phosphor-icons/web 2.1.1</code>, regular weight.</li>
+      <li>Images: public <code>framerusercontent.com/images/</code> URLs, not committed to the repo.</li>
+      <li>Hosting: GitHub Pages, repo <code>karlyitianli.github.io</code>, branch <code>main</code>.</li>
+    </ul>
+  </section>
+
+  <section class="panel" id="panel-colours" role="tabpanel" aria-labelledby="tab-colours" tabindex="0">
+    <h2>Colour tokens</h2>
+    <p class="note">Token names are from Framer. Border is a single token used for the sidebar, case study cards, and contact row dividers.</p>
+    <table>
+      <tr><th>Token</th><th>Value</th><th>Use</th></tr>
+      <tr><td><span class="swatch" style="background:#fcfcfc"></span>Surface</td><td><code>#fcfcfc</code></td><td>Page background</td></tr>
+      <tr><td><span class="swatch" style="background:#f9f3e6"></span>Tan</td><td><code>#f9f3e6</code></td><td>Sidebar and case study cards</td></tr>
+      <tr><td><span class="swatch" style="background:#f5f2eb"></span>Beige</td><td><code>#f5f2eb</code></td><td>Secondary tan surface, unused on the homepage</td></tr>
+      <tr><td><span class="swatch" style="background:#292929"></span>Ink</td><td><code>#292929</code></td><td>Primary text</td></tr>
+      <tr><td><span class="swatch" style="background:#7e7e7e"></span>Muted</td><td><code>#7e7e7e</code></td><td>Secondary text, role, years, values, and the cursor tooltip fill</td></tr>
+      <tr><td><span class="swatch" style="background:#b58900"></span>Gold</td><td><code>#b58900</code></td><td>Download resume button, label text</td></tr>
+      <tr><td><span class="swatch" style="background:#806000"></span>Gold hover</td><td><code>#806000</code></td><td>Download resume button on hover</td></tr>
+      <tr><td><span class="swatch" style="background:rgba(18,18,18,0.07)"></span>Border</td><td><code>rgba(18, 18, 18, 0.07)</code></td><td>1px border on sidebar, cards, and contact row dividers</td></tr>
+      <tr><td><span class="swatch" style="background:#ffffff"></span>White</td><td><code>#ffffff</code></td><td>Button text, tooltip text, card logo background</td></tr>
+      <tr><td><span class="swatch" style="background:#707070"></span>Icon grey</td><td><code>#707070</code></td><td>Clock, contact, and download icons</td></tr>
+    </table>
+    <h2>Background grid</h2>
+    <p class="note">The page background is a 21 by 21px grid SVG, stroke <code>#121212</code> at 0.07 opacity, tiled over Surface. Same asset on every page.</p>
+  </section>
+
+  <section class="panel" id="panel-typography" role="tabpanel" aria-labelledby="tab-typography" tabindex="0">
+    <h2>Typefaces</h2>
+    <p class="note">Inter for everything except the small location and clock labels, which are DM Mono. Inter is loaded from Framer's own Inter 4.000 files, not Google Fonts, because Google's static Inter strips the character variant features. OpenType features <code>cv03, cv04, cv09, cv11, blwf</code> are on everywhere. In Inter 4, the single-storey "a" is <code>cv11</code>, not <code>cv03</code>.</p>
+    <table>
+      <tr><th>Style</th><th>Font</th><th>Size / line height</th><th>Tracking</th><th>Weight</th></tr>
+      <tr><td>Name</td><td>Inter</td><td>24 / 32px, 20 / 32px on Phone, 16 / 24px on Small Phone</td><td>-0.8px</td><td>400</td></tr>
+      <tr><td>Body</td><td>Inter</td><td>14 / 20px</td><td>-0.1px</td><td>400</td></tr>
+      <tr><td>Card Title</td><td>Inter</td><td>16 / 24px</td><td>0</td><td>500</td></tr>
+      <tr><td>Metadata</td><td>Inter</td><td>14 / 20px</td><td>0</td><td>400, Muted</td></tr>
+      <tr><td>Label</td><td>DM Mono</td><td>12 / 16px</td><td>0.24px, uppercase</td><td>400, Gold</td></tr>
+      <tr><td>Label Spaced</td><td>DM Mono</td><td>12 / 16px</td><td>0.6px, uppercase</td><td>400, Muted</td></tr>
+      <tr><td>Button</td><td>Inter</td><td>14 / 20px</td><td>0</td><td>600, White</td></tr>
+    </table>
+    <div class="sample-card">
+      <p class="label">Live samples</p>
+      <p class="type-name">Karl Li</p>
+      <p class="type-body" style="margin-top:12px">Hi, I'm Karl, a designer based in Vancouver, BC.</p>
+      <p class="type-title" style="margin-top:12px">WATS</p>
+      <p class="type-meta">2025 – 2026</p>
+      <p class="type-label" style="margin-top:12px">Label</p>
+      <p class="type-label-spaced">Vancouver, BC</p>
+      <p class="type-button" style="margin-top:12px">Download resume</p>
+    </div>
+  </section>
+
+  <section class="panel" id="panel-components" role="tabpanel" aria-labelledby="tab-components" tabindex="0">
+    <h2>Sidebar</h2>
+    <p class="note">420px wide on Desktop and Laptop, 400px on Tablet, full width and stacked on Phone and Small Phone. Tan, 1px Border, radius 16px, padding 24px, sticky top 12px. Inside, a vertical stack with 24px gaps: location and time, profile, about, contact. Gap between the sidebar stack and the Download button is 0, the 24px space comes from Contact padding-bottom alone.</p>
+    <h2>Contact Link</h2>
+    <p class="note">Icon 16px, label, value on the right in Muted. Padding 4px 0, 1px Border bottom divider, 8px gap between rows. On hover the row dims to 0.5 opacity and a cursor tooltip follows the mouse.</p>
+    <div class="sample-card">
+      <p class="label">Live example</p>
+      <button class="demo-row" type="button"><span class="label"><i class="ph ph-file-text"></i>Resume</span><span class="value">August 2026</span></button>
+      <button class="demo-row" type="button"><span class="label"><i class="ph ph-linkedin-logo"></i>LinkedIn</span><span class="value">/karlyitianli</span></button>
+      <button class="demo-row" type="button"><span class="label"><i class="ph ph-envelope"></i>Email</span><span class="value">karl.yitian.li@gmail.com</span></button>
+    </div>
+    <h2>Download Resume button</h2>
+    <p class="note">Height 39px, full width, Gold fill, 1px Border, radius 8px, shadow <code>0 1px 1px rgba(0, 0, 0, 0.06)</code>, Phosphor Download Simple 20px, white 14px semibold text. Hover fill is Gold hover. Links to the same Google Doc as the Resume row.</p>
+    <div class="sample-card">
+      <p class="label">Live example</p>
+      <a class="download" href="https://docs.google.com/document/d/157TECODsRMnPA10_hurluWfFheK8Xdb2fbJapuPxo8o/edit?tab=t.0" target="_blank" rel="noopener"><i class="ph ph-download-simple"></i>Download resume</a>
+    </div>
+    <h2>Case Study Card</h2>
+    <p class="note">Tan, 1px Border, radius 16px. Header: 56px logo, radius 12px, title and subtitle, years on the right in Metadata. Preview image below, padding 0 12px 12px, radius 12px, aspect 2160 by 1350. Cards stack with 24px gaps and 40px padding at the bottom of the list. The Level card links to <code>./level</code>, which does not exist yet.</p>
+    <div class="sample-card">
+      <p class="label">Live example</p>
+      <article class="card">
+        <div class="card-head">
+          <img class="card-logo" src="https://framerusercontent.com/images/mVSH0dEO32Z4BhAnCA8YlKimeQ.png?width=1024&amp;height=1024" alt="WATS logo" width="56" height="56">
+          <div class="card-info"><p class="card-title">WATS</p><p class="card-sub">Turning waste into a metered utility</p></div>
+          <span class="card-years">2025 – 2026</span>
+        </div>
+        <div class="card-preview"><img src="https://framerusercontent.com/images/pmYfhtd3OFXm4hyJPA3SDKiEBj4.png?width=2160&amp;height=1350" alt="WATS metrics dashboard" width="2160" height="1350" loading="lazy"></div>
+      </article>
+    </div>
+    <h2>Vancouver Clock</h2>
+    <p class="note">Live clock, America/Vancouver, hour and minute with AM/PM and short timezone name, DM Mono 12px, Muted, with a Phosphor Clock icon 16px in Icon grey. The colon blinks every second, 1 second steps animation, on for half a second, off for half.</p>
+    <h2>Cursor tooltip</h2>
+    <p class="note">A shared pill that follows the mouse, offset 16px right and down, clamped to the viewport. Fill Muted <code>#7e7e7e</code>, radius 99px, padding 8px 12px 8px 8px, gap 8px, white 14px text, 20px Phosphor icon. Resume and LinkedIn read "Open tab" with Arrow Square Out. Email reads "Copy" with Copy, and switches to "Copied!" for 1 second after clicking. The native pointer cursor stays visible. Touch devices show no tooltip.</p>
+    <div class="sample-card">
+      <p class="label">Live examples</p>
+      <p style="margin-bottom:12px"><span class="tip"><i class="ph ph-arrow-square-out"></i>Open tab</span></p>
+      <p><span class="tip"><i class="ph ph-copy"></i>Copy</span></p>
+    </div>
+    <h2>Portrait</h2>
+    <p class="note">56 by 56px, radius 12px, 1px border <code>rgba(126, 126, 126, 0.2)</code>, public Framer image URL.</p>
+  </section>
+
+  <section class="panel" id="panel-layout" role="tabpanel" aria-labelledby="tab-layout" tabindex="0">
+    <h2>Breakpoints</h2>
+    <p class="note">Breakpoints are from the Framer frames. Two columns above 1024px, stacked below.</p>
+    <table>
+      <tr><th>Breakpoint</th><th>Width</th><th>Layout</th></tr>
+      <tr><td>Desktop</td><td>1440px and up</td><td>Sidebar 420px, container max 1440px, gap 24px</td></tr>
+      <tr><td>Laptop</td><td>1280 to 1439px</td><td>Sidebar 420px, gap 24px</td></tr>
+      <tr><td>Tablet</td><td>1024 to 1279px</td><td>Sidebar 400px, gap 0, right padding 24px all sides</td></tr>
+      <tr><td>Phone</td><td>768 to 1023px</td><td>Stacked, sidebar full width, padding 24px, name 20px</td></tr>
+      <tr><td>Small Phone</td><td>Under 768px</td><td>Stacked, padding 8px, name 16px</td></tr>
+    </table>
+    <h2>Spacing</h2>
+    <p class="note">Scale in use: 4, 8, 12, 16, 20, 24, and 40px. Key values: 24px between sidebar sections and between cards, 12px inside card headers, 8px gaps in contact links and tooltips, 40px padding at the bottom of the card list.</p>
+    <h2>Radii and borders</h2>
+    <ul>
+      <li>Sidebar and case study cards: radius 16px, 1px Border.</li>
+      <li>Portrait and card logos and preview images: radius 12px.</li>
+      <li>Download button: radius 8px, 1px Border.</li>
+      <li>Cursor tooltip: radius 99px, no border.</li>
+      <li>Contact rows: no radius, 1px Border bottom only.</li>
+    </ul>
+  </section>
+</main>
+<script>
+  var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
+  var panels = {};
+  tabs.forEach(function (tab) { panels[tab.dataset.tab] = document.getElementById("panel-" + tab.dataset.tab); });
+  function selectTab(name, focus) {
+    tabs.forEach(function (tab) {
+      var active = tab.dataset.tab === name;
+      tab.setAttribute("aria-selected", active ? "true" : "false");
+      tab.tabIndex = active ? 0 : -1;
+      panels[tab.dataset.tab].classList.toggle("active", active);
+      if (active && focus) tab.focus();
+    });
+    if (history.replaceState) history.replaceState(null, "", "#" + name);
+  }
+  tabs.forEach(function (tab, i) {
+    tab.addEventListener("click", function () { selectTab(tab.dataset.tab, false); });
+    tab.addEventListener("keydown", function (e) {
+      var next = null;
+      if (e.key === "ArrowRight") next = tabs[(i + 1) % tabs.length];
+      if (e.key === "ArrowLeft") next = tabs[(i - 1 + tabs.length) % tabs.length];
+      if (next) { e.preventDefault(); selectTab(next.dataset.tab, true); }
+    });
+  });
+  var initial = (location.hash || "#overview").slice(1);
+  if (panels[initial]) selectTab(initial, false);
+</script>
+</body>
+</html>
