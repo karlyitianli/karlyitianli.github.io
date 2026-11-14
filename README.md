@@ -108,6 +108,11 @@ Everything below was done in one working session on Nov 13, 2026,
 rebuilding the site from Framer `karls.design` as static HTML on GitHub
 Pages. All commits are on `main` in `karlyitianli.github.io`, newest first.
 
+- Homepage `.page` gap removed at 1279px and below: Tablet
+  (1024-1279.98px), Phone (768-1023.98px), and Small Phone (under
+  768px) all set `.page { gap: 0; }`, so the sidebar and the cards stack
+  with no gap between them. Desktop and Laptop (1280px and up) keep the
+  24px gap between the sidebar and the cards.
 - `5687769` — Root-relative links: every internal link on the site changed from
   `./slug` to `/slug` and Back from `./` to `/`. The relative links
   broke on the case study pages because they live in subdirectories:
