@@ -125,7 +125,7 @@ Everything below was done in one working session on Nov 13, 2026,
 rebuilding the site from Framer `karls.design` as static HTML on GitHub
 Pages. All commits are on `main` in `karlyitianli.github.io`, newest first.
 
-- Phone nav centering: at 768 to 1023px the section pills are now
+- `2fe8719` — Phone nav centering: at 768 to 1023px the section pills are now
   centered and Next sits flush right, matching Framer. The middle
   `.nav-links` group takes all free space (`flex: 1`) and centers its
   pills (`justify-content: center`), while Back and Next keep their
