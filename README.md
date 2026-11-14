@@ -27,16 +27,27 @@ to `main`, GitHub Pages serves it.
   User research, Data visualization). Content comes from Karl's 2021
   portfolio presentation doc, written up concise, with the homepage
   dashboard screenshot reused as the hero for now.
-- `/wats/`, `/greenhouse/`, `/quil/` — Placeholder pages for the
-  other case studies, in the same three-column layout as `/level/`. The
-  left nav has Back, the four section pills, and Next; the right panel
-  has the logo, tagline, Role, Team (except WATS, which has none),
-  Timeline, and Skills. The middle column is still blank for now and
-  will be filled in following the `/level/` example. Section pills are
-  dead links until the middle has sections. WATS: Design Lead, 1 month.
+- `/quil/` — Quil case study, "Care navigation during COVID-19", in
+  the same three-column layout as `/level/`: sticky section nav on the
+  left, case study in the centre, project details on the right (Role:
+  Product Designer, Team: Patient app, Timeline: 1 month, Skills:
+  Product strategy, Systems thinking). Content comes from Karl's Quil
+  case study index Google Doc (1Rld1Ci5CQipwdkgNw4ktHUe-xYtjSqg54ccAcHksEC8),
+  covering the Scaling Quil / Multi Journey Home project, written up
+  concise, with the homepage journeys screenshot reused as the hero.
+  Outcomes are stated honestly: 48.2% engaged against a 50% goal, 4 of
+  6 customers live. Interview prep and personal background from the doc
+  were left out.
+- `/wats/`, `/greenhouse/` — Placeholder pages for the other case
+  studies, in the same three-column layout as `/level/`. The left nav
+  has Back, the four section pills, and Next; the right panel has the
+  logo, tagline, Role, Team (except WATS, which has none), Timeline,
+  and Skills. The middle column is still blank for now and will be
+  filled in following the `/level/` example. Section pills are dead
+  links until the middle has sections. WATS: Design Lead, 1 month.
   Greenhouse: Senior Product Designer, Applied Machine Learning, 1
-  month. Quil: Product Designer, Patient app, 1 month. All three reuse
-  the Level skills (Product strategy, Systems thinking) for now.
+  month. Both reuse the Level skills (Product strategy, Systems
+  thinking) for now.
 - Back and Next: every case study page has Back to the homepage and Next
   to the next case study in homepage order (WATS, Greenhouse, Level,
   Attentive, Quil), landing on placeholders too, and wrapping from Quil

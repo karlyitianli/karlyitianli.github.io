@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
-<title>Quil — Karl Li</title>
-<meta name="description" content="Quil case study, coming soon.">
+<title>Quil — Care navigation during COVID-19 — Karl Li</title>
+<meta name="description" content="Quil case study: scaled the patient app from one journey at a time to multiple journeys during COVID-19. 48.2% of patients engaged against a 50% goal; 4 of 6 customers live.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
@@ -111,6 +111,53 @@
     </aside>
 
     <article class="panel main">
+      <div class="head">
+        <h1>Care navigation during COVID-19</h1>
+        <p class="intro">Scaled Quil&rsquo;s patient app from one journey at a time to multiple journeys during COVID-19, so patients navigating more than one health event could keep up with all of them. The work helped land four new customers.</p>
+      </div>
+      <img class="hero" src="https://framerusercontent.com/images/UjWbhJi3TRVIfPkhekMff07YKk4.png?width=2160&amp;height=1350" alt="Quil journeys" width="2160" height="1350" loading="lazy">
+
+      <section id="problem">
+        <h2>Problem</h2>
+        <p>Quil is a joint venture between Comcast and Independence Blue Cross. Its consumer web app is a self-paced learning portal for navigating health events: each Journey contains steps, and each step contains activities like articles, videos, checklists, and surveys. The first client was Penn Orthopaedics, with knee and hip replacement Journeys built to prevent readmissions. When COVID-19 hit, patients needed support across multiple journeys at once, but the app was built for one journey at a time.</p>
+        <ol>
+          <li>The home page only displayed one activity from one Journey, so patients in multiple journeys couldn&rsquo;t see everything they needed to do.</li>
+          <li>Progress on the Journey page was confusing, and activities were hard to read.</li>
+          <li>Navigation, home, Journey, and profile pages all assumed a single journey, so nothing scaled to patients with more than one health event.</li>
+        </ol>
+      </section>
+
+      <section id="Solution">
+        <h2>Solution</h2>
+        <p>Redesigned the app around multiple journeys, borrowing proven patterns from analogous products instead of starting from scratch.</p>
+        <ol>
+          <li>Navigation: Redesigned the nav inspired by Duolingo, folding into top and bottom nav on mobile, with icons drawn on a keyline grid.</li>
+          <li>Home: Redesigned the home page around activity cards, each showing the provider, journey name, activity name, and activity type, with the featured activity from the patient&rsquo;s most recent journey.</li>
+          <li>Journeys: Redesigned the Journey page so patients can switch journeys from a dropdown, borrowing the table-of-contents treatment from Lynda.com and the progress bar and checkmarks from Rise.com.</li>
+          <li>Profile: Reworked the profile page, converting the subnav menu into a dropdown on mobile, an idea from the developer on the team.</li>
+          <li>Process: Managed changing requirements with the PM in Airtable, prioritizing there before creating tickets in Jira, to keep scope clear as COVID needs shifted.</li>
+        </ol>
+      </section>
+
+      <section id="impact">
+        <h2>Outcomes</h2>
+        <ol>
+          <li>48.2% of patients engaged (3 or more sessions) by the end of 2020, against a 50% goal.</li>
+          <li>4 of 6 customers live by the end of 2020.</li>
+          <li>The multi-journey work helped land four new customers.</li>
+          <li>We fell short of both targets. Usage is easy; adoption is really hard.</li>
+        </ol>
+      </section>
+
+      <section id="REFLECTION">
+        <h2>Reflection</h2>
+        <ol>
+          <li>Usage is easy, adoption is really hard: getting patients to open the app is a different problem from getting health systems and patients to adopt it.</li>
+          <li>Analogous products beat starting from scratch: Duolingo&rsquo;s nav, Lynda.com&rsquo;s table of contents, and Rise.com&rsquo;s progress treatment each solved one piece of the problem.</li>
+          <li>Changing requirements need a shared source of truth: Airtable gave the PM and me one place to prioritize before work became Jira tickets.</li>
+          <li>Multiple journeys is an information hierarchy problem, not a feature count problem: each activity card had to carry provider, journey, activity, and type in a single glance.</li>
+        </ol>
+      </section>
     </article>
 
     <aside class="panel right">
