@@ -108,6 +108,12 @@ Everything below was done in one working session on Nov 13, 2026,
 rebuilding the site from Framer `karls.design` as static HTML on GitHub
 Pages. All commits are on `main` in `karlyitianli.github.io`, newest first.
 
+- `c909fe9` — Back and Next wired on all case study pages. Back goes
+  to the homepage. Next follows homepage order (WATS, Greenhouse, Level,
+  Attentive, Quil), lands on placeholders too, and wraps from Quil back
+  to WATS. Next stays plain "Next". The three placeholder pages now use
+  the same three-column layout as `/level/`, with blank middle and right
+  columns for now.
 - `60369c9` — `/attentive/` case study page added, "Analytics
   Dashboard", in the same layout as `/level/`, with concise copy written
   from Karl's 2021 portfolio presentation doc (Google Doc
