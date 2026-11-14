@@ -27,10 +27,16 @@ to `main`, GitHub Pages serves it.
   User research, Data visualization). Content comes from Karl's 2021
   portfolio presentation doc, written up concise, with the homepage
   dashboard screenshot reused as the hero for now.
-- `/wats/`, `/greenhouse/`, `/quil/` — Empty placeholder pages for the
-  other case studies, in the same three-column layout as `/level/` with
-  blank middle and right columns for now. They will be filled in
-  following the `/level/` example.
+- `/wats/`, `/greenhouse/`, `/quil/` — Placeholder pages for the
+  other case studies, in the same three-column layout as `/level/`. The
+  left nav has Back, the four section pills, and Next; the right panel
+  has the logo, tagline, Role, Team (except WATS, which has none),
+  Timeline, and Skills. The middle column is still blank for now and
+  will be filled in following the `/level/` example. Section pills are
+  dead links until the middle has sections. WATS: Design Lead, 1 month.
+  Greenhouse: Senior Product Designer, Applied Machine Learning, 1
+  month. Quil: Product Designer, Patient app, 1 month. All three reuse
+  the Level skills (Product strategy, Systems thinking) for now.
 - Back and Next: every case study page has Back to the homepage and Next
   to the next case study in homepage order (WATS, Greenhouse, Level,
   Attentive, Quil), landing on placeholders too, and wrapping from Quil
