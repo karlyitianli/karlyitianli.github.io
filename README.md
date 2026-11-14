@@ -20,9 +20,16 @@ to `main`, GitHub Pages serves it.
   the right (Role: Senior Product Designer, Team: Eng, Data, Ops, Timeline:
   3 weeks, Skills: Product strategy, Systems thinking). Stacks to one
   column on Phone and Small Phone, where the right details panel is hidden.
-- `/wats/`, `/greenhouse/`, `/attentive/`, `/quil/` — Empty placeholder
-  pages for the other case studies, company name plus "Coming soon." and a
-  Back link, in the same site style. They will be filled in following the
+- `/attentive/` — Attentive case study, "Analytics Dashboard". Same
+  three-column layout as `/level/`: sticky section nav on the left, case
+  study in the centre, project details on the right (Role: Product
+  Designer, Team: PM, Eng, Design Systems, Timeline: 4 months, Skills:
+  User research, Data visualization). Content comes from Karl's 2021
+  portfolio presentation doc, written up concise, with the homepage
+  dashboard screenshot reused as the hero for now.
+- `/wats/`, `/greenhouse/`, `/quil/` — Empty placeholder pages for the
+  other case studies, company name plus "Coming soon." and a Back link,
+  in the same site style. They will be filled in following the
   `/level/` example.
 - `/design-system/` — Design system reference for this site: colour tokens,
   typography, components, and layout breakpoints, with live samples.

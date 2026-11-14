@@ -4,23 +4,30 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
-<title>Attentive — Karl Li</title>
-<meta name="description" content="Attentive case study, coming soon.">
+<title>Attentive — Analytics Dashboard — Karl Li</title>
+<meta name="description" content="Attentive case study: rebuilt Reports into an Analytics tab marketers could trust. Beta to 15 clients in 4 months; 160+ clients rated it 8.37 out of 10.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 <style>
   @font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/GrgcKwrN6d3Uz8EwcLHZxwEfC4.woff2") format("woff2"); font-display: swap; font-style: normal; font-weight: 400; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+  @font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/UjlFhCnUjxhNfep4oYBPqnEssyo.woff2") format("woff2"); font-display: swap; font-style: normal; font-weight: 500; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+  @font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/yDtI2UI8XcEg1W2je9XPN3Noo.woff2") format("woff2"); font-display: swap; font-style: normal; font-weight: 600; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
   :root {
     --surface: #fcfcfc;
+    --tan: #f9f3e6;
+    --beige: #f5f2eb;
     --ink: #292929;
     --muted: #7e7e7e;
     --border: rgba(18, 18, 18, 0.07);
+    --gold: #b58900;
+    --gold-hover: #806000;
     --white: #ffffff;
     --icon-grey: #707070;
   }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
     margin: 0;
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -36,21 +43,148 @@
   }
   a { color: inherit; }
   p { margin: 0; }
-  .page { max-width: 960px; margin: 0 auto; padding: 24px; }
-  .panel { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 8px; }
+  .page { padding: 16px 40px 40px; }
+  .content { max-width: 1280px; margin: 0 auto; display: flex; align-items: flex-start; gap: 16px; padding-top: 24px; }
+  .panel { background: var(--white); border: 1px solid var(--border); border-radius: 8px; }
+  .left { width: 128px; flex: none; padding: 12px; position: sticky; top: 24px; z-index: 1; }
+  .nav { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
+  .nav-links { display: flex; flex-direction: column; align-items: flex-start; gap: 0; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--white); border-radius: 999px; padding: 6px 12px;
+    font-size: 14px; line-height: 20px; letter-spacing: -0.1px; color: var(--muted);
+    text-decoration: none; white-space: nowrap;
+  }
+  .pill:hover { background: var(--border); color: var(--ink); }
+  .pill .ph { font-size: 16px; color: var(--icon-grey); }
+  .main { flex: 1; min-width: 0; padding: 24px; display: flex; flex-direction: column; gap: 24px; }
+  .right { width: 256px; flex: none; padding: 24px; }
   h1 { font-size: 24px; line-height: 32px; letter-spacing: -0.8px; font-weight: 400; margin: 0; }
-  .sub { color: var(--muted); }
-  .back { display: inline-flex; align-items: center; gap: 8px; background: var(--white); border-radius: 999px; padding: 6px 12px; color: var(--muted); text-decoration: none; width: max-content; }
-  .back:hover { color: var(--ink); }
-  .back .ph { font-size: 16px; color: var(--icon-grey); }
+  .intro { color: var(--muted); }
+  .head { display: flex; flex-direction: column; gap: 8px; }
+  .hero { width: 100%; height: auto; aspect-ratio: 2160 / 1350; object-fit: cover; border-radius: 16px; display: block; }
+  section { display: flex; flex-direction: column; gap: 8px; scroll-margin-top: 24px; }
+  section h2 {
+    font-family: "DM Mono", monospace; font-size: 12px; line-height: 16px;
+    letter-spacing: 0.24px; color: var(--gold); text-transform: uppercase; font-weight: 400; margin: 0;
+  }
+  ol { margin: 0; padding-left: 20px; }
+  li { margin-bottom: 0; }
+  li::marker { color: var(--muted); }
+  .details { display: flex; flex-direction: column; gap: 16px; }
+  .logo { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; border: 1px solid var(--border); background: #fff; display: block; }
+  .project-info { display: flex; flex-direction: column; gap: 2px; }
+  .project-info .sub { color: var(--muted); }
+  .detail { display: flex; flex-direction: column; gap: 4px; }
+  .detail .label {
+    font-family: "DM Mono", monospace; font-size: 12px; line-height: 20px;
+    letter-spacing: 0; color: var(--gold); text-transform: uppercase;
+  }
+  @media (max-width: 1023.98px) {
+    .page { padding: 16px; }
+    .content { flex-direction: column; padding-top: 0; }
+    .left { width: 100%; position: static; }
+    .nav { flex-direction: row; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .nav-links { flex-direction: row; flex-wrap: wrap; }
+    .right { display: none; }
+  }
+  @media (max-width: 767.98px) {
+    .page { padding: 8px; }
+    h1 { font-size: 16px; line-height: 24px; }
+  }
 </style>
 </head>
 <body>
 <main class="page">
-  <a class="back" href="./"><i class="ph ph-arrow-left"></i>Back</a>
-  <div class="panel" style="margin-top: 16px;">
-    <h1>Attentive</h1>
-    <p class="sub">Coming soon.</p>
+  <div class="content">
+    <aside class="panel left">
+      <nav class="nav" aria-label="Case study sections">
+        <a class="pill" href="./"><i class="ph ph-arrow-left"></i>Back</a>
+        <div class="nav-links">
+          <a class="pill" href="./attentive#problem">Problem</a>
+          <a class="pill" href="./attentive#Solution">Solution</a>
+          <a class="pill" href="./attentive#impact">Outcomes</a>
+          <a class="pill" href="./attentive#REFLECTION">Reflection</a>
+        </div>
+        <a class="pill" href="./">Next<i class="ph ph-arrow-right"></i></a>
+      </nav>
+    </aside>
+
+    <article class="panel main">
+      <div class="head">
+        <h1>Analytics Dashboard</h1>
+        <p class="intro">Rebuilt Attentive&rsquo;s Reports tab into an Analytics tab marketers could trust. Beta to 15 clients in 4 months; 160+ clients rated it 8.37 out of 10.</p>
+      </div>
+      <img class="hero" src="https://framerusercontent.com/images/XqXv1NqHKZQd9meHlCqytrME8.png?width=2160&amp;height=1350" alt="Attentive analytics dashboard" width="2160" height="1350" loading="lazy">
+
+      <section id="problem">
+        <h2>Problem</h2>
+        <p>Attentive is an SMS marketing platform for nearly 4,000 brands, driving ~20% of their online revenue and delivering billions of messages a week to 200M+ subscribers. But marketers could not understand their program performance, lost trust in the numbers, and left for competitors.</p>
+        <ol>
+          <li>~$1M a year in ops costs, from Jira tickets routed to solutions engineering and technical account managers for custom data.</li>
+          <li>Each CSM spent 1 to 4 hours every week fulfilling custom report requests for their clients.</li>
+          <li>The legacy Reports tab was painful and clunky to use, confirmed by a UX audit of annotated screenshots.</li>
+          <li>Marketers had a long tail of performance questions, and no self-serve way to answer even the most basic ones.</li>
+        </ol>
+      </section>
+
+      <section id="Solution">
+        <h2>Solution</h2>
+        <p>Rebuild Reports as an Analytics tab for deep dives, and reframe Dashboard as Home, a personalized command center. Accurate data and relevant insights first.</p>
+        <ol>
+          <li>Research: interviewed customers on why they needed performance data and what they would do with it, audited the legacy Reports tab, and ran a competitor gap analysis against Klaviyo and Shopify.</li>
+          <li>One-day design sprint in July with the PM, Design Systems Lead, front-end eng, and 3 designers: defined the future of data viz at Attentive, and four principles, easy to understand, invites discovery, answers a question, inspires action.</li>
+          <li>Two reference designs, stacked bars vs side-by-side lines. Concept testing with CS picked lines: clearer at a glance, easier to handle responsively, and no accessible color palette for data viz existed yet.</li>
+          <li>Narrowed the metrics to four categories, in order: Subs, Revenue, Message Send, Billable Spend. Subs first, because revenue means nothing without subscriber context. Send and spend measure productivity per dollar. Revenue vs spend gives ROI for Campaigns vs Journeys.</li>
+          <li>Built on Nivo.rocks, the first chart library implementation at Attentive. Worked out the x-axes display rules with eng based on data points and time grouping, plus side nav updates and mobile responsiveness.</li>
+        </ol>
+      </section>
+
+      <section id="impact">
+        <h2>Outcomes</h2>
+        <ol>
+          <li>Beta launched Thursday, September 16, 2021 to 15 clients, measured with a 3-question Sprig microsurvey and Heap tracking of scrolls, clicks, and hovers.</li>
+          <li>160+ clients rated Analytics 8.37 out of 10 in the October 1 CEO feedback survey, a sign of extreme interest.</li>
+          <li>The four metric categories answered the most common performance questions first. The rest of the long tail stayed open, a known next step, not a surprise.</li>
+          <li>Established the data viz principles and chart patterns the platform reused afterward.</li>
+        </ol>
+      </section>
+
+      <section id="REFLECTION">
+        <h2>Reflection</h2>
+        <ol>
+          <li>Trust is the product: accurate data and relevant insights had to come before anything else.</li>
+          <li>Simple first: as the first chart library implementation, the design had to be easy to grasp yet comprehensive enough to cover the top questions.</li>
+          <li>Data governance is the hidden work: finding the eng owner and the source of truth for metric calculations, like active subscribers, took real time.</li>
+        </ol>
+      </section>
+    </article>
+
+    <aside class="panel right">
+      <div class="details">
+        <img class="logo" src="https://framerusercontent.com/images/ZEfl5vTtGqXq06VwEmK8O4E.png?width=100&amp;height=100" alt="Attentive logo" width="56" height="56">
+        <div class="project-info">
+          <h1>Attentive</h1>
+          <p class="sub">SMS marketing for beloved brands</p>
+        </div>
+        <div class="detail">
+          <p class="label">Role</p>
+          <p>Product Designer</p>
+        </div>
+        <div class="detail">
+          <p class="label">Team</p>
+          <p>PM, Eng, Design Systems</p>
+        </div>
+        <div class="detail">
+          <p class="label">Timeline</p>
+          <p>4 months</p>
+        </div>
+        <div class="detail">
+          <p class="label">Skills</p>
+          <p>User research<br>Data visualization</p>
+        </div>
+      </div>
+    </aside>
   </div>
 </main>
 </body>
