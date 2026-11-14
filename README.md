@@ -132,7 +132,13 @@ Pages. All commits are on `main` in `karlyitianli.github.io`, newest first.
   opens a 2 by 2 menu of the four sections; tapping a section navigates,
   updates the label, and closes the menu. Tapping outside or pressing
   Escape also closes it. At 768px and up the four pills stay inline.
-  Applied to all five case study pages.
+  Applied to all five case study pages. Frosted nav on Small Phone:
+  below 768px the left panel is sticky at the top with Framer's exact
+  treatment, transparent background with backdrop-filter blur(10px)
+  (plus the Safari prefix), so page content blurs as it scrolls beneath
+  it, and the pills inside are transparent so the bar reads as one
+  frosted strip. At 768px and up the nav stays static with a solid
+  white panel.
 - `8fbc21f` — `/quil/` case study page filled in, "Care navigation
   during COVID-19", from the Quil case study index doc, covering the
   Scaling Quil / Multi Journey Home project, with the homepage journeys
