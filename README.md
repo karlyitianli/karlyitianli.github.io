@@ -125,6 +125,10 @@ Everything below was done in one working session on Nov 13, 2026,
 rebuilding the site from Framer `karls.design` as static HTML on GitHub
 Pages. All commits are on `main` in `karlyitianli.github.io`, newest first.
 
+- `50c255a` — Frosted sticky nav below 768px: the left panel is
+  sticky at the top with a transparent background and backdrop-filter
+  blur(10px), plus the Safari prefix, and transparent pills inside so
+  the bar reads as one frosted strip.
 - `4ef6c26` — Small Phone section nav dropdown: below 768px the four section
   pills collapse into a single dropdown in the middle of the nav, between
   Back and Next, showing the current section with a chevron. It starts
