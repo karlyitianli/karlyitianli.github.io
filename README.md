@@ -108,6 +108,15 @@ Everything below was done in one working session on Nov 13, 2026,
 rebuilding the site from Framer `karls.design` as static HTML on GitHub
 Pages. All commits are on `main` in `karlyitianli.github.io`, newest first.
 
+- Root-relative links: every internal link on the site changed from
+  `./slug` to `/slug` and Back from `./` to `/`. The relative links
+  broke on the case study pages because they live in subdirectories:
+  Next on `/greenhouse/` resolved to `/greenhouse/level` (404) and Back
+  resolved to the same page. Root-relative links always resolve from
+  the domain root, so Back always lands on the homepage and Next always
+  lands on the next case study. The section pills on `/level/` and
+  `/attentive/` (`/level#problem` etc.) and the Design System breadcrumb
+  were fixed the same way.
 - `c909fe9` — Back and Next wired on all case study pages. Back goes
   to the homepage. Next follows homepage order (WATS, Greenhouse, Level,
   Attentive, Quil), lands on placeholders too, and wraps from Quil back
