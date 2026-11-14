@@ -56,6 +56,14 @@
     text-decoration: none; white-space: nowrap;
   }
   .pill:hover { background: var(--border); color: var(--ink); }
+  .nav-dropdown { display: none; position: relative; }
+  .dropdown-toggle { cursor: pointer; border: 0; font: inherit; }
+  .dropdown-toggle .ph-caret-down { transition: transform 0.15s ease; }
+  .dropdown-toggle[aria-expanded="true"] .ph-caret-down { transform: rotate(180deg); }
+  .dropdown-menu { position: absolute; top: calc(100% + 8px); left: 0; right: 0; z-index: 10; background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 8px; display: grid; grid-template-columns: 1fr 1fr; }
+  .dropdown-menu[hidden] { display: none; }
+  .dropdown-menu a { display: block; padding: 8px 12px; font-size: 14px; line-height: 20px; letter-spacing: -0.1px; color: var(--muted); text-decoration: none; border-radius: 999px; white-space: nowrap; }
+  .dropdown-menu a:hover { background: var(--border); color: var(--ink); }
   .pill .ph { font-size: 16px; color: var(--icon-grey); }
   .main { flex: 1; min-width: 0; padding: 24px; display: flex; flex-direction: column; gap: 24px; }
   .right { width: 256px; flex: none; padding: 24px; }
@@ -91,6 +99,10 @@
   @media (max-width: 767.98px) {
     .page { padding: 8px; }
     h1 { font-size: 16px; line-height: 24px; }
+    .nav { flex-wrap: nowrap; justify-content: space-between; }
+    .nav-links { display: none; }
+    .nav-dropdown { display: block; flex: 1; }
+    .dropdown-toggle { width: 100%; justify-content: center; }
   }
 </style>
 </head>
@@ -105,6 +117,15 @@
           <a class="pill" href="/greenhouse#Solution">Solution</a>
           <a class="pill" href="/greenhouse#impact">Outcomes</a>
           <a class="pill" href="/greenhouse#REFLECTION">Reflection</a>
+        </div>
+        <div class="nav-dropdown">
+          <button class="pill dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="section-menu"><span class="dropdown-label">Problem</span><i class="ph ph-caret-down"></i></button>
+          <div class="dropdown-menu" id="section-menu" hidden>
+            <a href="/greenhouse#problem">Problem</a>
+            <a href="/greenhouse#Solution">Solution</a>
+            <a href="/greenhouse#impact">Outcomes</a>
+            <a href="/greenhouse#REFLECTION">Reflection</a>
+          </div>
         </div>
         <a class="pill" href="/level">Next<i class="ph ph-arrow-right"></i></a>
       </nav>
@@ -140,5 +161,32 @@
     </aside>
   </div>
 </main>
+<script>
+(function () {
+  var toggle = document.querySelector('.dropdown-toggle');
+  var menu = document.getElementById('section-menu');
+  if (!toggle || !menu) return;
+  var label = toggle.querySelector('.dropdown-label');
+  function close() { menu.hidden = true; toggle.setAttribute('aria-expanded', 'false'); }
+  toggle.addEventListener('click', function (e) {
+    e.stopPropagation();
+    var open = menu.hidden;
+    menu.hidden = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  menu.addEventListener('click', function (e) {
+    var link = e.target.closest('a');
+    if (!link) return;
+    label.textContent = link.textContent;
+    close();
+  });
+  document.addEventListener('click', function (e) {
+    if (!menu.hidden && !e.target.closest('.nav-dropdown')) close();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !menu.hidden) { close(); toggle.focus(); }
+  });
+})();
+</script>
 </body>
 </html>

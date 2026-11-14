@@ -125,6 +125,14 @@ Everything below was done in one working session on Nov 13, 2026,
 rebuilding the site from Framer `karls.design` as static HTML on GitHub
 Pages. All commits are on `main` in `karlyitianli.github.io`, newest first.
 
+- Small Phone section nav dropdown: below 768px the four section
+  pills collapse into a single dropdown in the middle of the nav, between
+  Back and Next, showing the current section with a chevron. It starts
+  on "Problem" and updates to whichever section is tapped. Tapping it
+  opens a 2 by 2 menu of the four sections; tapping a section navigates,
+  updates the label, and closes the menu. Tapping outside or pressing
+  Escape also closes it. At 768px and up the four pills stay inline.
+  Applied to all five case study pages.
 - `8fbc21f` — `/quil/` case study page filled in, "Care navigation
   during COVID-19", from the Quil case study index doc, covering the
   Scaling Quil / Multi Journey Home project, with the homepage journeys
