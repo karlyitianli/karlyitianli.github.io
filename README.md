@@ -125,6 +125,11 @@ Everything below was done in one working session on Nov 13, 2026,
 rebuilding the site from Framer `karls.design` as static HTML on GitHub
 Pages. All commits are on `main` in `karlyitianli.github.io`, newest first.
 
+- `8fbc21f` — `/quil/` case study page filled in, "Care navigation
+  during COVID-19", from the Quil case study index doc, covering the
+  Scaling Quil / Multi Journey Home project, with the homepage journeys
+  screenshot as hero and the outcomes stated honestly. Interview prep
+  and personal background from the doc were left out.
 - `a7f1e43` — Left and right panels populated on `/wats/`,
   `/greenhouse/`, and `/quil/`. Left nav has Back, the four section
   pills, and Next. Right panel has the logo (reused from the homepage
