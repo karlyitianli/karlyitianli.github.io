@@ -125,7 +125,7 @@ Everything below was done in one working session on Nov 13, 2026,
 rebuilding the site from Framer `karls.design` as static HTML on GitHub
 Pages. All commits are on `main` in `karlyitianli.github.io`, newest first.
 
-- Small Phone section nav dropdown: below 768px the four section
+- `4ef6c26` — Small Phone section nav dropdown: below 768px the four section
   pills collapse into a single dropdown in the middle of the nav, between
   Back and Next, showing the current section with a chevron. It starts
   on "Problem" and updates to whichever section is tapped. Tapping it
