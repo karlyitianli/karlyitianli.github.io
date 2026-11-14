@@ -104,6 +104,14 @@ Everything below was done in one working session on Nov 13, 2026,
 rebuilding the site from Framer `karls.design` as static HTML on GitHub
 Pages. All commits are on `main` in `karlyitianli.github.io`, newest first.
 
+- `60369c9` — `/attentive/` case study page added, "Analytics
+  Dashboard", in the same layout as `/level/`, with concise copy written
+  from Karl's 2021 portfolio presentation doc (Google Doc
+  12cBcqKUov3rqaenvKNEiURhKeKQC41LFkjjZ1LcY_lw). Hero is the homepage
+  dashboard screenshot reused for now. Project details: Product
+  Designer, PM / Eng / Design Systems, 4 months, User research and Data
+  visualization. Salary, leaving reasons, and interview prep from the
+  doc were left out.
 - `9426ccb` — Small Phone breakpoint: the About text collapses into one
   flowing paragraph too, matching Framer's Small Phone frame.
 - `ddb158f` — Phone breakpoint (768–1023.98px): the About text collapses
