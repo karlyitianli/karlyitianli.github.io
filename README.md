@@ -114,6 +114,11 @@ Everything below was done in one working session on Nov 13, 2026,
 rebuilding the site from Framer `karls.design` as static HTML on GitHub
 Pages. All commits are on `main` in `karlyitianli.github.io`, newest first.
 
+- `a7f1e43` — Left and right panels populated on `/wats/`,
+  `/greenhouse/`, and `/quil/`. Left nav has Back, the four section
+  pills, and Next. Right panel has the logo (reused from the homepage
+  card), the homepage tagline, Role, Team, Timeline 1 month, and the
+  Level skills for now. WATS has no Team row. Middle column still blank.
 - `e3818d6` — Homepage `.page` gap removed at 1279px and below: Tablet
   (1024-1279.98px), Phone (768-1023.98px), and Small Phone (under
   768px) all set `.page { gap: 0; }`, so the sidebar and the cards stack
