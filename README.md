@@ -28,9 +28,13 @@ to `main`, GitHub Pages serves it.
   portfolio presentation doc, written up concise, with the homepage
   dashboard screenshot reused as the hero for now.
 - `/wats/`, `/greenhouse/`, `/quil/` — Empty placeholder pages for the
-  other case studies, company name plus "Coming soon." and a Back link,
-  in the same site style. They will be filled in following the
-  `/level/` example.
+  other case studies, in the same three-column layout as `/level/` with
+  blank middle and right columns for now. They will be filled in
+  following the `/level/` example.
+- Back and Next: every case study page has Back to the homepage and Next
+  to the next case study in homepage order (WATS, Greenhouse, Level,
+  Attentive, Quil), landing on placeholders too, and wrapping from Quil
+  back to WATS. Next stays plain "Next", no company name.
 - `/design-system/` — Design system reference for this site: colour tokens,
   typography, components, and layout breakpoints, with live samples.
   Tappable tabs (Overview, Colours, Typography, Components, Layout) with
