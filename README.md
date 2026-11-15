@@ -125,6 +125,11 @@ Everything below was done in one working session on Nov 13, 2026,
 rebuilding the site from Framer `karls.design` as static HTML on GitHub
 Pages. All commits are on `main` in `karlyitianli.github.io`, newest first.
 
+- `01e30aa` — Download resume button weight 600 to 400, Nov 14, 2026:
+  the homepage sidebar button (`a.download`) now renders at Inter 400
+  instead of 600, same size, line height, and colours. The design
+  system page was updated to match: the Button type sample, the live
+  download button sample, and the Typography table row all now say 400.
 - `95aadaa` — Sticky right panel at Tablet and up, Nov 14, 2026: the
   right project details panel is now `position: sticky; top: 24px`,
   the same top spacing as the left nav, so it stays visible while the
