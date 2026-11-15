@@ -125,6 +125,12 @@ Everything below was done in one working session on Nov 13, 2026,
 rebuilding the site from Framer `karls.design` as static HTML on GitHub
 Pages. All commits are on `main` in `karlyitianli.github.io`, newest first.
 
+- `95aadaa` — Sticky right panel at Tablet and up, Nov 14, 2026: the
+  right project details panel is now `position: sticky; top: 24px`,
+  the same top spacing as the left nav, so it stays visible while the
+  case study scrolls. It is a base rule, so it applies at Tablet
+  (1024px) and up; at Phone and Small Phone the panel stays hidden.
+  All five case study pages.
 - `573ce7b` — Sticky nav top offsets from Framer, Nov 14, 2026: the case
   study nav is now sticky at Phone too (it was `position: static` and
   scrolled away), with `top: 24px` and the same frosted blur
