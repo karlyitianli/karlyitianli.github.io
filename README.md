@@ -125,6 +125,9 @@ Everything below was done in one working session on Nov 13, 2026,
 rebuilding the site from Framer `karls.design` as static HTML on GitHub
 Pages. All commits are on `main` in `karlyitianli.github.io`, newest first.
 
+- `06f0a14` — Remove Ivan and Leah from the Greenhouse page, Nov 15,
+  2026: the recently viewed tray item no longer names them. Peter
+  stays.
 - `9765661` — Greenhouse title to Global search, first names restored,
   Nov 15, 2026: the case study title is now "Global search" per Karl,
   and the first names are back on the page, Peter's hack day project
