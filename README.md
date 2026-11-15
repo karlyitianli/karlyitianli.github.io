@@ -125,6 +125,13 @@ Everything below was done in one working session on Nov 13, 2026,
 rebuilding the site from Framer `karls.design` as static HTML on GitHub
 Pages. All commits are on `main` in `karlyitianli.github.io`, newest first.
 
+- `573ce7b` — Sticky nav top offsets from Framer, Nov 14, 2026: the case
+  study nav is now sticky at Phone too (it was `position: static` and
+  scrolled away), with `top: 24px` and the same frosted blur
+  (`backdrop-filter: blur(10px)`, transparent background, transparent
+  pills) as Small Phone, so the bar reads as one frosted strip. At Small
+  Phone the sticky offset changed from `top: 0` to `top: 8px`, so on
+  scroll there is 8px of space above the bar. All five case study pages.
 - `2fe8719` — Phone nav centering: at 768 to 1023px the section pills are now
   centered and Next sits flush right, matching Framer. The middle
   `.nav-links` group takes all free space (`flex: 1`) and centers its
