@@ -125,6 +125,19 @@ Everything below was done in one working session on Nov 13, 2026,
 rebuilding the site from Framer `karls.design` as static HTML on GitHub
 Pages. All commits are on `main` in `karlyitianli.github.io`, newest first.
 
+- `a605eb0` — Fill in the Greenhouse case study page, Nov 15, 2026:
+  "Command Palette", from the design review doc and the 1-pager.
+  Problem covers buried navigation, the Configure kitchen sink, 40 to
+  100 day implementations, the flawed recently viewed tray, and the
+  22% / 433k clicks search stat. Solution covers Command K with quick
+  actions, the production re-skin of the hack day code, recently
+  viewed inside the menu, the Advanced candidate search call to
+  action, and the August 26 beta. Outcomes states the success criteria
+  and beta measurement plan, since neither doc has post-launch
+  numbers. Reflection covers raising the ceiling, the pre-mortem, and
+  small bets over big rewrites. Hero reuses the homepage card image.
+  Names anonymized to roles; the right panel is unchanged from the
+  placeholder.
 - `32a39b8` — Dropdown label follows the URL hash, Nov 15, 2026: opening
   a case study page directly at a section hash (for example
   `/quil/#reflection`) now sets the Small Phone dropdown label to that
