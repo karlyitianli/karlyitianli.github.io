@@ -125,6 +125,11 @@ Everything below was done in one working session on Nov 13, 2026,
 rebuilding the site from Framer `karls.design` as static HTML on GitHub
 Pages. All commits are on `main` in `karlyitianli.github.io`, newest first.
 
+- `9765661` — Greenhouse title to Global search, first names restored,
+  Nov 15, 2026: the case study title is now "Global search" per Karl,
+  and the first names are back on the page, Peter's hack day project
+  and Ivan and Leah on the recently viewed tray. Right panel, hero,
+  and YouTube decision unchanged from a605eb0.
 - `a605eb0` — Fill in the Greenhouse case study page, Nov 15, 2026:
   "Command Palette", from the design review doc and the 1-pager.
   Problem covers buried navigation, the Configure kitchen sink, 40 to
