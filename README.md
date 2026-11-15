@@ -125,6 +125,17 @@ Everything below was done in one working session on Nov 13, 2026,
 rebuilding the site from Framer `karls.design` as static HTML on GitHub
 Pages. All commits are on `main` in `karlyitianli.github.io`, newest first.
 
+- `3a08043` — Dropdown label reset fix and lowercase hashes, Nov 14,
+  2026: tapping a section in the Small Phone dropdown reloaded the
+  page, which reset the label to "Problem". The section links were
+  full-path hrefs (`/quil#REFLECTION`) while the live page sits at
+  `/quil/`, so every tap was a cross-path navigation and a fresh load.
+  All section links are now bare fragments (`#problem`, `#solution`,
+  `#impact`, `#reflection`), so tapping one stays on the same page and
+  the label update survives. Section ids are all lowercase now
+  (`#solution`, `#reflection`; `#problem` and `#impact` already were).
+  All five case study pages; WATS and Greenhouse have the links but no
+  sections yet, those ids arrive when their middles are filled in.
 - `79898f6` — Card tagline wording, Nov 14, 2026: WATS now reads
   "Waste as a measured utility." (was "Turning waste into a metered
   utility") and Attentive now reads "SMS marketing for digital brands"
