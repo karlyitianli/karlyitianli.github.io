@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
-<title>Greenhouse — Karl Li</title>
+<title>Greenhouse — Command Palette — Karl Li</title>
+<meta name="description" content="Greenhouse case study: a keyboard-first command palette for search, navigation, and quick actions across the hiring platform.">
 <meta name="description" content="Greenhouse case study, coming soon.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -135,6 +136,55 @@
     </aside>
 
     <article class="panel main">
+      <div class="head">
+        <h1>Command Palette</h1>
+        <p class="intro">A keyboard-first way to search, navigate, and act across Greenhouse, starting from a hack day project that won 1st place.</p>
+      </div>
+      <img class="hero" src="https://framerusercontent.com/images/ukw50Jrd4u7WUAHZfe9IjyNQ.png?width=2160&amp;height=1350" alt="Greenhouse command palette" width="2160" height="1350" loading="lazy">
+
+      <section id="problem">
+        <h2>Problem</h2>
+        <p>Greenhouse helps companies hire, but finding your way around the product had become a job in itself. The workflows people need every day are buried too deep, and the navigation makes users memorize the route instead of showing it.</p>
+        <ol>
+          <li>Configure is the kitchen sink, where every team dumps its settings, and it sets the tone for the whole product.</li>
+          <li>New customers take 40 to 100 days to finish their initial implementation, with heavy training and support along the way. One senior CSM put it bluntly: &ldquo;I&rsquo;m mystified that anyone would initially find GHR user-friendly.&rdquo;</li>
+          <li>The recently viewed tray in the bottom right holds up to 10 candidates and jobs, but it clears itself when you reset browser cookies or log out. The intent is good, the execution is off.</li>
+          <li>Search is the front door: 22% of users click into global search right after login, 433k clicks, making it the most popular action in the app. But search is thin behind the front door: a 2-character minimum, only 4 Person and Job results, and several Configure pages not indexed at all.</li>
+        </ol>
+      </section>
+
+      <section id="solution">
+        <h2>Solution</h2>
+        <p>Instead of redesigning the whole app navigation, a project that would take months of research, design, content, engineering, and support docs, we turned a hack day project into a beta: a command palette that meets users where they already are.</p>
+        <ol>
+          <li>Command K, anywhere: press Command K or open global search to find candidates, jobs, pages, and settings, and run quick actions like &ldquo;Add job&rdquo; or &ldquo;Add candidate&rdquo;, which is what sets the palette apart from regular search.</li>
+          <li>Rebuilt for production: the hack day code was re-factored and re-skinned with Greenhouse typography, icons, and components, keeping parity with global search, highlighting matched text, and showing the right fields for each result type.</li>
+          <li>Recently viewed, fixed: the palette&rsquo;s default view shows recently viewed records inside the menu, so the tray&rsquo;s job moves into search, where people already look.</li>
+          <li>A door to what&rsquo;s next: the palette carries a call to action for Advanced candidate search, and every click on it is tracked, so the team can learn whether people want it as an entry point for advanced search and AI.</li>
+          <li>Beta first: scoped to a test group the week of August 26, with a control group monitored alongside, before any wider rollout.</li>
+        </ol>
+      </section>
+
+      <section id="impact">
+        <h2>Outcomes</h2>
+        <p>Success was defined up front, and the beta was built to measure it.</p>
+        <ol>
+          <li>Fewer navigation support tickets: the headline success metric, measured by a drop in tickets about finding things in the product.</li>
+          <li>Search as a signal: every query is tracked, including abandoned ones, so the most-searched record types and follow-up actions show the team what users actually need.</li>
+          <li>A measured beta: up to 100 customers in a control group and a test group, with Pendo surveys and interviews, and a satisfaction bar above 3 out of 5 to move to general availability.</li>
+          <li>A sequenced rollout: four stages to about 250 orgs, 25, 62, 125, then 250, watching discovery, recently viewed usage, and performance at each step, then the new global search to all customers.</li>
+        </ol>
+      </section>
+
+      <section id="reflection">
+        <h2>Reflection</h2>
+        <ol>
+          <li>Raise the ceiling: Greenhouse is the industry leader, so the bar is ours to set. Site admins are power users, and the product should ship opinionated software for them, not just meet everyone where they are.</li>
+          <li>Be wrong on purpose: the beta was designed to learn, not to validate. The pre-mortem was that this could be the wrong idea, or the right idea at the wrong time, with more urgent problems elsewhere.</li>
+          <li>Small bets beat big rewrites: a palette is a cheaper way to learn whether a new entry point helps than redesigning Configure, the job dashboard, and My Dashboard all at once.</li>
+          <li>Design for everyone, including the tech-savvy: the open question was who the palette is really for, new users, existing users, or mostly power users, and the beta was built to answer it.</li>
+        </ol>
+      </section>
     </article>
 
     <aside class="panel right">
