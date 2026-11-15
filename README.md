@@ -125,6 +125,12 @@ Everything below was done in one working session on Nov 13, 2026,
 rebuilding the site from Framer `karls.design` as static HTML on GitHub
 Pages. All commits are on `main` in `karlyitianli.github.io`, newest first.
 
+- `79898f6` — Card tagline wording, Nov 14, 2026: WATS now reads
+  "Waste as a measured utility." (was "Turning waste into a metered
+  utility") and Attentive now reads "SMS marketing for digital brands"
+  (was "SMS marketing for beloved brands"). Changed on the homepage
+  cards and in the right panel of each case study page, plus the WATS
+  sample card on the design system page.
 - `01e30aa` — Download resume button weight 600 to 400, Nov 14, 2026:
   the homepage sidebar button (`a.download`) now renders at Inter 400
   instead of 600, same size, line height, and colours. The design
