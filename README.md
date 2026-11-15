@@ -125,6 +125,15 @@ Everything below was done in one working session on Nov 13, 2026,
 rebuilding the site from Framer `karls.design` as static HTML on GitHub
 Pages. All commits are on `main` in `karlyitianli.github.io`, newest first.
 
+- `32a39b8` — Dropdown label follows the URL hash, Nov 15, 2026: opening
+  a case study page directly at a section hash (for example
+  `/quil/#reflection`) now sets the Small Phone dropdown label to that
+  section on load, and the label also updates when the hash changes
+  (back and forward buttons). Still no scroll-spy: scrolling by hand
+  does not change the label. Same commit also drops the trailing period
+  from the WATS subtitle everywhere (homepage card, /wats right panel,
+  design system sample), finishing the period removal Karl made
+  directly on GitHub (94b16ac).
 - `3a08043` — Dropdown label reset fix and lowercase hashes, Nov 14,
   2026: tapping a section in the Small Phone dropdown reloaded the
   page, which reset the label to "Problem". The section links were
@@ -137,8 +146,8 @@ Pages. All commits are on `main` in `karlyitianli.github.io`, newest first.
   All five case study pages; WATS and Greenhouse have the links but no
   sections yet, those ids arrive when their middles are filled in.
 - `79898f6` — Card tagline wording, Nov 14, 2026: WATS now reads
-  "Waste as a measured utility." (was "Turning waste into a metered
-  utility") and Attentive now reads "SMS marketing for digital brands"
+  "Waste as a measured utility" (was "Turning waste into a metered
+  utility", the trailing period was dropped later, see 32a39b8) and Attentive now reads "SMS marketing for digital brands"
   (was "SMS marketing for beloved brands"). Changed on the homepage
   cards and in the right panel of each case study page, plus the WATS
   sample card on the design system page.
