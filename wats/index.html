@@ -142,7 +142,7 @@
         <img class="logo" src="https://framerusercontent.com/images/mVSH0dEO32Z4BhAnCA8YlKimeQ.png?width=1024&amp;height=1024" alt="WATS logo" width="56" height="56">
         <div class="project-info">
           <h1>WATS</h1>
-          <p class="sub">Waste as a measured utility.</p>
+          <p class="sub">Waste as a measured utility</p>
         </div>
         <div class="detail">
           <p class="label">Role</p>
@@ -166,6 +166,13 @@
   var menu = document.getElementById('section-menu');
   if (!toggle || !menu) return;
   var label = toggle.querySelector('.dropdown-label');
+  var sectionNames = { problem: 'Problem', solution: 'Solution', impact: 'Outcomes', reflection: 'Reflection' };
+  function syncLabelFromHash() {
+    var name = sectionNames[(location.hash || '').slice(1).toLowerCase()];
+    if (name) label.textContent = name;
+  }
+  syncLabelFromHash();
+  window.addEventListener('hashchange', syncLabelFromHash);
   function close() { menu.hidden = true; toggle.setAttribute('aria-expanded', 'false'); }
   toggle.addEventListener('click', function (e) {
     e.stopPropagation();

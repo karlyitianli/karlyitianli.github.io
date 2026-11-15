@@ -216,6 +216,13 @@
   var menu = document.getElementById('section-menu');
   if (!toggle || !menu) return;
   var label = toggle.querySelector('.dropdown-label');
+  var sectionNames = { problem: 'Problem', solution: 'Solution', impact: 'Outcomes', reflection: 'Reflection' };
+  function syncLabelFromHash() {
+    var name = sectionNames[(location.hash || '').slice(1).toLowerCase()];
+    if (name) label.textContent = name;
+  }
+  syncLabelFromHash();
+  window.addEventListener('hashchange', syncLabelFromHash);
   function close() { menu.hidden = true; toggle.setAttribute('aria-expanded', 'false'); }
   toggle.addEventListener('click', function (e) {
     e.stopPropagation();
