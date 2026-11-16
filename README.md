@@ -125,6 +125,15 @@ Everything below was done in one working session on Nov 13, 2026,
 rebuilding the site from Framer `karls.design` as static HTML on GitHub
 Pages. All commits are on `main` in `karlyitianli.github.io`, newest first.
 
+- `e40b419` — Card titles match the Framer preset, font smoothing site-wide,
+  Nov 15, 2026: homepage card titles were frozen at 16px weight 500 at every
+  breakpoint; they now follow the shared Framer preset with the name, 24px
+  weight 400 line-height 32px letter-spacing -0.8px on Desktop, 20px on Phone,
+  16px on Small Phone. All seven pages now set `-webkit-font-smoothing:
+  antialiased` with `-moz-osx-font-smoothing: grayscale`, matching Framer,
+  which was the other half of the heavier look. The /design-system type
+  scale, sample card, and breakpoint table are updated to match, and the
+  Download button note now says weight 400 instead of semibold.
 - `06f0a14` — Remove Ivan and Leah from the Greenhouse page, Nov 15,
   2026: the recently viewed tray item no longer names them. Peter
   stays.
