@@ -31,6 +31,8 @@
     margin: 0;
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-feature-settings: "cv03" 1, "cv04" 1, "cv09" 1, "cv11" 1, "blwf" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     background-color: var(--surface);
     background-image: url("/grid.svg");
     background-size: 15px 15px;
@@ -72,7 +74,7 @@
   .sample-card .label { font-family: "DM Mono", monospace; font-size: 12px; line-height: 16px; letter-spacing: 0.6px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
   .type-name { font-size: 24px; line-height: 32px; letter-spacing: -0.8px; }
   .type-body { font-size: 14px; line-height: 20px; letter-spacing: -0.1px; }
-  .type-title { font-size: 16px; line-height: 24px; font-weight: 500; }
+  .type-title { font-size: 24px; line-height: 32px; letter-spacing: -0.8px; font-weight: 400; }
   .type-meta { font-size: 14px; line-height: 20px; color: var(--muted); }
   .type-label { font-family: "DM Mono", monospace; font-size: 12px; line-height: 16px; letter-spacing: 0.24px; color: var(--gold); text-transform: uppercase; }
   .type-label-spaced { font-family: "DM Mono", monospace; font-size: 12px; line-height: 16px; letter-spacing: 0.6px; color: var(--muted); text-transform: uppercase; }
@@ -96,7 +98,7 @@
   .card-head { display: flex; align-items: center; gap: 12px; padding: 12px; }
   .card-logo { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; background: #fff; }
   .card-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
-  .card-title { font-size: 16px; line-height: 24px; font-weight: 500; }
+  .card-title { font-size: 24px; line-height: 32px; letter-spacing: -0.8px; font-weight: 400; }
   .card-sub { font-size: 14px; line-height: 20px; color: var(--muted); }
   .card-years { font-size: 14px; line-height: 20px; color: var(--muted); white-space: nowrap; }
   .card-preview { padding: 0 12px 12px; }
@@ -109,9 +111,15 @@
   .tip .ph { font-size: 20px; color: #fff; }
   ul { margin: 0 0 16px; padding-left: 20px; }
   li { margin-bottom: 4px; }
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .card-title { font-size: 20px; line-height: 32px; }
+    .type-title { font-size: 20px; line-height: 32px; }
+  }
   @media (max-width: 767.98px) {
     .page { padding: 8px; }
     h1 { font-size: 16px; line-height: 24px; }
+    .card-title { font-size: 16px; line-height: 24px; }
+    .type-title { font-size: 16px; line-height: 24px; }
   }
 </style>
 </head>
@@ -148,7 +156,7 @@
     <table>
       <tr><th>Layer</th><th>Exact tech</th></tr>
       <tr><td>HTML</td><td>HTML5, one file per page: <code>index.html</code> at the root, <code>design-system/index.html</code> for this page. Semantic tags only: <code>main</code>, <code>header</code>, <code>section</code>, <code>article</code>, <code>aside</code>, <code>button</code>, <code>a</code>. Meta viewport for mobile, <code>lang="en"</code>, title and description meta. No templates, no includes, no server-side rendering.</td></tr>
-      <tr><td>CSS</td><td>Hand-written CSS in a single <code>&lt;style&gt;</code> block per page, no preprocessor, no Tailwind, no CSS framework. Design tokens as CSS custom properties in <code>:root</code> (<code>--surface</code>, <code>--tan</code>, <code>--ink</code>, <code>--muted</code>, <code>--border</code>, <code>--gold</code>, <code>--gold-hover</code>). Layout is Flexbox throughout, with media queries at the Framer breakpoints, 1024px and 768px. Motion is CSS only: the clock colon blink is a <code>@keyframes blink</code> with <code>1s steps(1)</code>, the button hover is a background colour change.</td></tr>
+      <tr><td>CSS</td><td>Hand-written CSS in a single <code>&lt;style&gt;</code> block per page, no preprocessor, no Tailwind, no CSS framework. Design tokens as CSS custom properties in <code>:root</code> (<code>--surface</code>, <code>--tan</code>, <code>--ink</code>, <code>--muted</code>, <code>--border</code>, <code>--gold</code>, <code>--gold-hover</code>). Layout is Flexbox throughout, with media queries at the Framer breakpoints, 1024px and 768px. Motion is CSS only: the clock colon blink is a <code>@keyframes blink</code> with <code>1s steps(1)</code>, the button hover is a background colour change. Font smoothing is <code>-webkit-font-smoothing: antialiased</code> with <code>-moz-osx-font-smoothing: grayscale</code>, matching Framer.</td></tr>
       <tr><td>JavaScript</td><td>Vanilla JavaScript in a single inline <code>&lt;script&gt;</code> block per page, no framework, no libraries, no modules. Homepage: live Vancouver clock via <code>Intl.DateTimeFormat</code> with <code>timeZone: "America/Vancouver"</code>, updating every second; copy-email via <code>navigator.clipboard.writeText</code> with a 1 second "Copied!" state; cursor tooltip following <code>mousemove</code>, shown only when <code>matchMedia("(hover: hover)")</code> matches. This page: tab switching with <code>role="tablist"</code>, <code>aria-selected</code>, left and right arrow key navigation, and <code>#hash</code> routing via <code>history.replaceState</code>.</td></tr>
       <tr><td>Fonts</td><td>Inter 4.000, loaded from Framer's own <code>.woff2</code> files via <code>@font-face</code>, weights 400, 500, and 600, latin unicode range only. DM Mono, weight 400, loaded from Google Fonts. OpenType features <code>cv03, cv04, cv09, cv11, blwf</code> on the body, so the single-storey "a" is <code>cv11</code>. Google Fonts Inter is deliberately not used, its static files strip those features.</td></tr>
       <tr><td>Icons</td><td>Phosphor Icons, <code>@phosphor-icons/web 2.1.1</code> from the unpkg CDN, regular weight, used as <code>&lt;i class="ph ph-clock"&gt;</code> and similar. Icons in use: Clock, File Text, LinkedIn Logo, Envelope, Download Simple, Arrow Square Out, Copy.</td></tr>
@@ -187,7 +195,7 @@
       <tr><th>Style</th><th>Font</th><th>Size / line height</th><th>Tracking</th><th>Weight</th></tr>
       <tr><td>Name</td><td>Inter</td><td>24 / 32px, 20 / 32px on Phone, 16 / 24px on Small Phone</td><td>-0.8px</td><td>400</td></tr>
       <tr><td>Body</td><td>Inter</td><td>14 / 20px</td><td>-0.1px</td><td>400</td></tr>
-      <tr><td>Card Title</td><td>Inter</td><td>16 / 24px</td><td>0</td><td>500</td></tr>
+      <tr><td>Card Title</td><td>Inter</td><td>24 / 32px, 20 / 32px on Phone, 16 / 24px on Small Phone</td><td>-0.8px</td><td>400</td></tr>
       <tr><td>Metadata</td><td>Inter</td><td>14 / 20px</td><td>0</td><td>400, Muted</td></tr>
       <tr><td>Label</td><td>DM Mono</td><td>12 / 16px</td><td>0.24px, uppercase</td><td>400, Gold</td></tr>
       <tr><td>Label Spaced</td><td>DM Mono</td><td>12 / 16px</td><td>0.6px, uppercase</td><td>400, Muted</td></tr>
@@ -217,7 +225,7 @@
       <button class="demo-row" type="button"><span class="label"><i class="ph ph-envelope"></i>Email</span><span class="value">karl.yitian.li@gmail.com</span></button>
     </div>
     <h2>Download Resume button</h2>
-    <p class="note">Height 39px, full width, Gold fill, 1px Border, radius 8px, shadow <code>0 1px 1px rgba(0, 0, 0, 0.06)</code>, Phosphor Download Simple 20px, white 14px semibold text. Hover fill is Gold hover. Links to the same Google Doc as the Resume row.</p>
+    <p class="note">Height 39px, full width, Gold fill, 1px Border, radius 8px, shadow <code>0 1px 1px rgba(0, 0, 0, 0.06)</code>, Phosphor Download Simple 20px, white 14px text at weight 400. Hover fill is Gold hover. Links to the same Google Doc as the Resume row.</p>
     <div class="sample-card">
       <p class="label">Live example</p>
       <a class="download" href="https://docs.google.com/document/d/157TECODsRMnPA10_hurluWfFheK8Xdb2fbJapuPxo8o/edit?tab=t.0" target="_blank" rel="noopener"><i class="ph ph-download-simple"></i>Download resume</a>
@@ -256,8 +264,8 @@
       <tr><td>Desktop</td><td>1440px and up</td><td>Sidebar 420px, container max 1440px, gap 24px</td></tr>
       <tr><td>Laptop</td><td>1280 to 1439px</td><td>Sidebar 420px, gap 24px</td></tr>
       <tr><td>Tablet</td><td>1024 to 1279px</td><td>Sidebar 400px, gap 0, right padding 24px all sides</td></tr>
-      <tr><td>Phone</td><td>768 to 1023px</td><td>Stacked, sidebar full width, padding 24px, name 20px</td></tr>
-      <tr><td>Small Phone</td><td>Under 768px</td><td>Stacked, padding 8px, name 16px</td></tr>
+      <tr><td>Phone</td><td>768 to 1023px</td><td>Stacked, sidebar full width, padding 24px, name 20px, card titles 20px</td></tr>
+      <tr><td>Small Phone</td><td>Under 768px</td><td>Stacked, padding 8px, name 16px, card titles 16px</td></tr>
     </table>
     <h2>Spacing</h2>
     <p class="note">Scale in use: 4, 8, 12, 16, 20, 24, and 40px. Key values: 24px between sidebar sections and between cards, 12px inside card headers, 8px gaps in contact links and tooltips, 40px padding at the bottom of the card list.</p>

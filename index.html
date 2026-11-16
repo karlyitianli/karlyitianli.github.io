@@ -39,6 +39,8 @@
     /* Framer Inter presets use these OpenType features: cv03 is the
        single-storey "a", cv04 the single-storey "g", plus cv09, cv11, blwf. */
     font-feature-settings: "cv03" 1, "cv04" 1, "cv09" 1, "cv11" 1, "blwf" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     background-color: var(--surface);
     background-image: url("/grid.svg");
     background-size: 15px 15px;
@@ -136,7 +138,7 @@
   .card-head { display: flex; align-items: center; gap: 12px; padding: 12px; }
   .card-logo { width: 56px; height: 56px; flex: 0 0 auto; border-radius: 12px; object-fit: cover; display: block; background: #fff; }
   .card-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
-  .card-title { font-size: 16px; line-height: 24px; letter-spacing: 0; font-weight: 500; }
+  .card-title { font-size: 24px; line-height: 32px; letter-spacing: -0.8px; font-weight: 400; }
   .card-sub { font-size: 14px; line-height: 20px; letter-spacing: -0.1px; color: var(--muted); }
   .card-years { font-size: 14px; line-height: 20px; letter-spacing: 0; color: var(--muted); white-space: nowrap; }
   .card-preview { padding: 0 12px 12px; }
@@ -152,6 +154,7 @@
     .sidebar { width: 100%; position: static; }
     .right { width: 100%; padding: 24px; }
     .name { font-size: 20px; line-height: 32px; }
+    .card-title { font-size: 20px; line-height: 32px; }
     .about p { display: inline; margin-bottom: 0; }
   }
   @media (max-width: 767.98px) {
@@ -160,6 +163,7 @@
     .sidebar { width: 100%; position: static; }
     .right { width: 100%; padding: 8px; }
     .name { font-size: 16px; line-height: 24px; }
+    .card-title { font-size: 16px; line-height: 24px; }
     .about p { display: inline; margin-bottom: 0; }
   }
 </style>
