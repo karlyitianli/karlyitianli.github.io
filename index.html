@@ -8,6 +8,7 @@
 <meta name="description" content="Hi, I’m Karl, a designer based in Vancouver, BC. For the past decade, I've shipped 0-1 software across 6 startups and 6 industries.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://framerusercontent.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
 <style>
   /* Inter from Framer's own font files, not Google Fonts.
@@ -18,7 +19,7 @@
   @font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/UjlFhCnUjxhNfep4oYBPqnEssyo.woff2") format("woff2"); font-display: swap; font-style: normal; font-weight: 500; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
   @font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/yDtI2UI8XcEg1W2je9XPN3Noo.woff2") format("woff2"); font-display: swap; font-style: normal; font-weight: 600; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 </style>
-<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+<script defer src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 <style>
   :root {
     --surface: #fcfcfc;
@@ -134,7 +135,7 @@
   .right { flex: 1; min-width: 0; padding: 24px 24px 0 0; }
   .cards { display: flex; flex-direction: column; gap: 24px; padding-bottom: 40px; }
   .card { background: var(--tan); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: block; }
-  .card.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .card.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1), transform 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
   .card.reveal.in-view { opacity: 1; transform: translateY(0); }
   @media (prefers-reduced-motion: reduce) { .card.reveal { opacity: 1; transform: none; transition: none; } }
   a.card:hover { text-decoration: none; }
@@ -184,7 +185,7 @@
           </span>
         </div>
         <div class="profile">
-          <img class="portrait" src="https://framerusercontent.com/images/sg6ZHyFZmNrGPsJJwphTF7EqpWA.png?width=765&amp;height=744" alt="Karl Li" width="56" height="56">
+          <img class="portrait" decoding="async" sizes="56px" srcset="https://framerusercontent.com/images/sg6ZHyFZmNrGPsJJwphTF7EqpWA.png?scale-down-to=512&amp;width=765&amp;height=744 512w,https://framerusercontent.com/images/sg6ZHyFZmNrGPsJJwphTF7EqpWA.png?width=765&amp;height=744 765w" src="https://framerusercontent.com/images/sg6ZHyFZmNrGPsJJwphTF7EqpWA.png?width=765&amp;height=744" alt="Karl Li" width="56" height="56">
           <div class="identity">
             <p class="name">Karl Li</p>
             <p class="role">Product designer</p>
@@ -222,58 +223,58 @@
     <section class="cards" aria-label="Case Studies">
       <a class="card" href="/wats">
         <div class="card-head">
-          <img class="card-logo" src="https://framerusercontent.com/images/mVSH0dEO32Z4BhAnCA8YlKimeQ.png?width=1024&amp;height=1024" alt="WATS logo" width="56" height="56">
+          <img class="card-logo" decoding="async" sizes="56px" srcset="https://framerusercontent.com/images/mVSH0dEO32Z4BhAnCA8YlKimeQ.png?scale-down-to=512&amp;width=1024&amp;height=1024 512w,https://framerusercontent.com/images/mVSH0dEO32Z4BhAnCA8YlKimeQ.png?width=1024&amp;height=1024 1024w" src="https://framerusercontent.com/images/mVSH0dEO32Z4BhAnCA8YlKimeQ.png?width=1024&amp;height=1024" alt="WATS logo" width="56" height="56">
           <div class="card-info">
             <p class="card-title">WATS</p>
             <p class="card-sub">Waste as a measured utility</p>
           </div>
           <span class="card-years">2025 – 2026</span>
         </div>
-        <div class="card-preview"><img src="https://framerusercontent.com/images/pmYfhtd3OFXm4hyJPA3SDKiEBj4.png?width=2160&amp;height=1350" alt="WATS metrics dashboard" width="2160" height="1350" loading="lazy"></div>
+        <div class="card-preview"><img decoding="async" fetchpriority="high" sizes="(min-width: 1280px) 948px, (min-width: 1024px) calc(100vw - 448px), (min-width: 768px) calc(100vw - 72px), calc(100vw - 40px)" srcset="https://framerusercontent.com/images/pmYfhtd3OFXm4hyJPA3SDKiEBj4.png?scale-down-to=512&amp;width=2160&amp;height=1350 512w,https://framerusercontent.com/images/pmYfhtd3OFXm4hyJPA3SDKiEBj4.png?scale-down-to=1024&amp;width=2160&amp;height=1350 1024w,https://framerusercontent.com/images/pmYfhtd3OFXm4hyJPA3SDKiEBj4.png?scale-down-to=2048&amp;width=2160&amp;height=1350 2048w,https://framerusercontent.com/images/pmYfhtd3OFXm4hyJPA3SDKiEBj4.png?width=2160&amp;height=1350 2160w" src="https://framerusercontent.com/images/pmYfhtd3OFXm4hyJPA3SDKiEBj4.png?width=2160&amp;height=1350" alt="WATS metrics dashboard" width="2160" height="1350"></div>
       </a>
       <a class="card" href="/greenhouse">
         <div class="card-head">
-          <img class="card-logo" src="https://framerusercontent.com/images/0coXZ0gI0ZAIMEVBeygLUJD00.png?width=400&amp;height=400" alt="Greenhouse logo" width="56" height="56">
+          <img class="card-logo" decoding="async" src="https://framerusercontent.com/images/0coXZ0gI0ZAIMEVBeygLUJD00.png?width=400&amp;height=400" alt="Greenhouse logo" width="56" height="56">
           <div class="card-info">
             <p class="card-title">Greenhouse</p>
             <p class="card-sub">Making hiring work for everyone</p>
           </div>
           <span class="card-years">2024 – 2025</span>
         </div>
-        <div class="card-preview"><img src="https://framerusercontent.com/images/ukw50Jrd4u7WUAHZfe9IjyNQ.png?width=2160&amp;height=1350" alt="Greenhouse command palette" width="2160" height="1350" loading="lazy"></div>
+        <div class="card-preview"><img decoding="async" sizes="(min-width: 1280px) 948px, (min-width: 1024px) calc(100vw - 448px), (min-width: 768px) calc(100vw - 72px), calc(100vw - 40px)" srcset="https://framerusercontent.com/images/ukw50Jrd4u7WUAHZfe9IjyNQ.png?scale-down-to=512&amp;width=2160&amp;height=1350 512w,https://framerusercontent.com/images/ukw50Jrd4u7WUAHZfe9IjyNQ.png?scale-down-to=1024&amp;width=2160&amp;height=1350 1024w,https://framerusercontent.com/images/ukw50Jrd4u7WUAHZfe9IjyNQ.png?scale-down-to=2048&amp;width=2160&amp;height=1350 2048w,https://framerusercontent.com/images/ukw50Jrd4u7WUAHZfe9IjyNQ.png?width=2160&amp;height=1350 2160w" src="https://framerusercontent.com/images/ukw50Jrd4u7WUAHZfe9IjyNQ.png?width=2160&amp;height=1350" alt="Greenhouse command palette" width="2160" height="1350"></div>
       </a>
       <a class="card" href="/level">
         <div class="card-head">
-          <img class="card-logo" src="https://framerusercontent.com/images/lIPgPoH09Kfsj7b6txqdiU9KoA.png?width=100&amp;height=100" alt="Level logo" width="56" height="56">
+          <img class="card-logo" decoding="async" src="https://framerusercontent.com/images/lIPgPoH09Kfsj7b6txqdiU9KoA.png?width=100&amp;height=100" alt="Level logo" width="56" height="56">
           <div class="card-info">
             <p class="card-title">Level</p>
             <p class="card-sub">Employee benefits on 1 card</p>
           </div>
           <span class="card-years">2022 – 2023</span>
         </div>
-        <div class="card-preview"><img src="https://framerusercontent.com/images/PEDZcuqWHCx1QMp5SOQjxYAA1uA.png?width=2160&amp;height=1350" alt="Level app" width="2160" height="1350" loading="lazy"></div>
+        <div class="card-preview"><img decoding="async" loading="lazy" sizes="(min-width: 1280px) 948px, (min-width: 1024px) calc(100vw - 448px), (min-width: 768px) calc(100vw - 72px), calc(100vw - 40px)" srcset="https://framerusercontent.com/images/PEDZcuqWHCx1QMp5SOQjxYAA1uA.png?scale-down-to=512&amp;width=2160&amp;height=1350 512w,https://framerusercontent.com/images/PEDZcuqWHCx1QMp5SOQjxYAA1uA.png?scale-down-to=1024&amp;width=2160&amp;height=1350 1024w,https://framerusercontent.com/images/PEDZcuqWHCx1QMp5SOQjxYAA1uA.png?scale-down-to=2048&amp;width=2160&amp;height=1350 2048w,https://framerusercontent.com/images/PEDZcuqWHCx1QMp5SOQjxYAA1uA.png?width=2160&amp;height=1350 2160w" src="https://framerusercontent.com/images/PEDZcuqWHCx1QMp5SOQjxYAA1uA.png?width=2160&amp;height=1350" alt="Level app" width="2160" height="1350"></div>
       </a>
       <a class="card" href="/attentive">
         <div class="card-head">
-          <img class="card-logo" src="https://framerusercontent.com/images/ZEfl5vTtGqXq06VwEmK8O4E.png?width=100&amp;height=100" alt="Attentive logo" width="56" height="56">
+          <img class="card-logo" decoding="async" src="https://framerusercontent.com/images/ZEfl5vTtGqXq06VwEmK8O4E.png?width=100&amp;height=100" alt="Attentive logo" width="56" height="56">
           <div class="card-info">
             <p class="card-title">Attentive</p>
             <p class="card-sub">SMS marketing for digital brands</p>
           </div>
           <span class="card-years">2021 – 2022</span>
         </div>
-        <div class="card-preview"><img src="https://framerusercontent.com/images/XqXv1NqHKZQd9meHlCqytrME8.png?width=2160&amp;height=1350" alt="Attentive dashboard" width="2160" height="1350" loading="lazy"></div>
+        <div class="card-preview"><img decoding="async" loading="lazy" sizes="(min-width: 1280px) 948px, (min-width: 1024px) calc(100vw - 448px), (min-width: 768px) calc(100vw - 72px), calc(100vw - 40px)" srcset="https://framerusercontent.com/images/XqXv1NqHKZQd9meHlCqytrME8.png?scale-down-to=512&amp;width=2160&amp;height=1350 512w,https://framerusercontent.com/images/XqXv1NqHKZQd9meHlCqytrME8.png?scale-down-to=1024&amp;width=2160&amp;height=1350 1024w,https://framerusercontent.com/images/XqXv1NqHKZQd9meHlCqytrME8.png?scale-down-to=2048&amp;width=2160&amp;height=1350 2048w,https://framerusercontent.com/images/XqXv1NqHKZQd9meHlCqytrME8.png?width=2160&amp;height=1350 2160w" src="https://framerusercontent.com/images/XqXv1NqHKZQd9meHlCqytrME8.png?width=2160&amp;height=1350" alt="Attentive dashboard" width="2160" height="1350"></div>
       </a>
       <a class="card" href="/quil">
         <div class="card-head">
-          <img class="card-logo" src="https://framerusercontent.com/images/qeC0wc5FnpHpXaG1Jjdgpxsgpk.png?width=100&amp;height=100" alt="Quil logo" width="56" height="56">
+          <img class="card-logo" decoding="async" src="https://framerusercontent.com/images/qeC0wc5FnpHpXaG1Jjdgpxsgpk.png?width=100&amp;height=100" alt="Quil logo" width="56" height="56">
           <div class="card-info">
             <p class="card-title">Quil</p>
             <p class="card-sub">Care navigation during COVID-19</p>
           </div>
           <span class="card-years">2020 – 2021</span>
         </div>
-        <div class="card-preview"><img src="https://framerusercontent.com/images/UjWbhJi3TRVIfPkhekMff07YKk4.png?width=2160&amp;height=1350" alt="Quil journeys" width="2160" height="1350" loading="lazy"></div>
+        <div class="card-preview"><img decoding="async" loading="lazy" sizes="(min-width: 1280px) 948px, (min-width: 1024px) calc(100vw - 448px), (min-width: 768px) calc(100vw - 72px), calc(100vw - 40px)" srcset="https://framerusercontent.com/images/UjWbhJi3TRVIfPkhekMff07YKk4.png?scale-down-to=512&amp;width=2160&amp;height=1350 512w,https://framerusercontent.com/images/UjWbhJi3TRVIfPkhekMff07YKk4.png?scale-down-to=1024&amp;width=2160&amp;height=1350 1024w,https://framerusercontent.com/images/UjWbhJi3TRVIfPkhekMff07YKk4.png?scale-down-to=2048&amp;width=2160&amp;height=1350 2048w,https://framerusercontent.com/images/UjWbhJi3TRVIfPkhekMff07YKk4.png?width=2160&amp;height=1350 2160w" src="https://framerusercontent.com/images/UjWbhJi3TRVIfPkhekMff07YKk4.png?width=2160&amp;height=1350" alt="Quil journeys" width="2160" height="1350"></div>
       </a>
     </section>
   </div>
@@ -359,10 +360,9 @@
           revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15 });
-    document.querySelectorAll(".card").forEach(function (card, i) {
+    }, { threshold: 0 });
+    document.querySelectorAll(".card").forEach(function (card) {
       card.classList.add("reveal");
-      card.style.transitionDelay = (i * 0.08) + "s";
       revealObserver.observe(card);
     });
   }
